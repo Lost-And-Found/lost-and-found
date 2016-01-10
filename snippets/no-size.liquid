@@ -1,0 +1,18 @@
+<div class="no-size"><a>NOTIFY ME</a>when my size becomes available.</div>
+
+<div>
+<h2>EMAIL WHEN AVAILABLE</h2>
+<h3>Register your email address below to receive an email as soon as this becomes available again.</h3>
+	<div id="sizesmenue">
+		<ul>
+			{% for variant in product.variants %}
+			{% if variant.available == false %}
+				<li {% if forloop.first %}class="selected"{% endif %}><a href="{{ variant.id }}">{{ variant.title }}</a></li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+		<div id="dobulearrow">&#187;</div>
+	</div>
+
+	
+</div>
