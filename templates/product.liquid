@@ -103,7 +103,9 @@
 				<ul>
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
-							<li {% if forloop.first %}class="selected"{% endif %}><a href="{{ variant.id }}">{{ variant.title }}</a></li>
+							<li {% if forloop.first %}class="selected"{% endif %}><a href="{{ variant.id }}">{{ variant.title }} {{ variant.inventory_quantity }}</a></li>
+							{% else %}
+							<li {if forloop.first %} class="selected strike" {% else %} class="strike"{% endif %}> {{ variant.title }} Sold out </li>
 						{% endif %}
 					{% endfor %}
 				</ul>
@@ -130,7 +132,8 @@
 				</div>
 			{% endif %}
 			
-			
+			{if va}
+						
 		</form>
 		{% endif %}
 		
