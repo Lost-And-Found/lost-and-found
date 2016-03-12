@@ -116,6 +116,8 @@
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
+						{% else %}
+							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% endif %}
 					{% endfor %}
 				</select>
@@ -132,7 +134,6 @@
 				</div>
 			{% endif %}
 			
-			{if va}
 						
 		</form>
 		{% endif %}
