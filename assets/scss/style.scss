@@ -556,7 +556,7 @@ h4{
 
 				min-height: 49px;
 				display: block;
-				font-size: 22px !important;
+				font-size: 17px !important;
 				font-weight: inherit;
 			}
 			.dashafter{
@@ -849,7 +849,7 @@ h4{
 				z-index: 99;
 			}
 
-			input{
+			input {
 				width: 100%;
 				font-size: 1em;
 				color: inherit;
@@ -865,6 +865,10 @@ h4{
 			input:hover{
 				background-color: $bk-dark-color;
 				color: white;
+			}
+
+			input #email{
+				padding: .75em 0em !important;
 			}
 
 			#selector{
@@ -888,6 +892,11 @@ h4{
 				line-height: 1.6em;
 			}
 		}
+
+		.sm-txt {
+				font-size: 0.8em;
+			}
+
 
 		#sizesmenue{
 			display: none;
@@ -940,6 +949,7 @@ h4{
 					display: none;
 				}
 			}
+
 		}
 
 		#sizeselector.desktop {
@@ -1204,6 +1214,10 @@ h4{
 					-webkit-transition: background-color 0.5s ease-out;
 					&:hover{
 						background-color: #000;
+					}
+					#email {
+						padding: 1em 0em !important;
+						text-align: center;
 					}						
 				}
 			}

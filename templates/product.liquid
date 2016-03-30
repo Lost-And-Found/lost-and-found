@@ -116,15 +116,16 @@
 				<select name="id">
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
+							
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% else %}
+							
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
-				
-	<!-- 		<option disabled="disabled"> {{ variant.title }} - sold out!</option>			 -->
+			
 			{% if nocart == false %}
 				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
@@ -134,7 +135,15 @@
 					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
 				</div>
 			{% endif %}
+
+			{% if sizesoldout == true %}
+				<div class="sm-txt">NOTIFY ME WHEN ITEM IS RESTOCKED</div>
+				<input type="text" name="email" id="email" value="Email Address" class="button email">
+				<input type="submit" name="add" id="add" value="Submit" class="button">
+			{% endif %}
 			
+			
+		
 						
 		</form>
 		{% endif %}
