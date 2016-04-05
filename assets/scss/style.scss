@@ -697,8 +697,7 @@ h4{
 
 /* Product */
 	#productwrapper{
-		max-width: $max-width;
-		width: $stick-width;
+		width: $full-width;
 		margin:auto;
 		>div{
 			display: inline-block;
@@ -714,18 +713,21 @@ h4{
 
 		.images{
 			width: 70%;
-			padding-right: 3%;
+			max-width: 850px;
+			padding-right: 1%;
 
 
-
+			.leftcolumn {
+				max-width: 75px;
+			}
 
 			.leftcolumn,.mobileimage{
-				width: 11%;
+				width: 10%;
 				display: inline-block;
 				a{
 					display: block;
 					width: 85%;
-					padding-bottom: 1em;
+					padding-bottom: .25em;
 				}
 				a:hover {
 					opacity: 0.5;
@@ -754,7 +756,8 @@ h4{
 
 
 			.rightcolumn{
-				width: 89%;
+				width: 88%;
+				max-width: 750px;
 				display: inline-block;
 				vertical-align: top;
 				> div{
@@ -771,7 +774,32 @@ h4{
 		}
 
 
+		ul.product-tab {
+				list-style: none;
+				margin-bottom: 20px;
+			}
 
+		li#product-tabs {
+			display: inline-block;
+			padding: 10px;
+			border-bottom: 1px solid $border-color;
+			opacity: 0.5;	
+
+			a:hover {
+				transition: all 0.1s ease-out;
+				-o-transition: all 0.2s ease-out;
+				-moz-transition: all 0.2s ease-out;
+				-webkit-transition: all 0.2s ease-out;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			a:hover {
+				border-bottom: 1px solid black;
+			}	
+		}
 
 		.info{
 			width:27%;
@@ -783,6 +811,8 @@ h4{
 				padding: 0;	
 				margin: 20px 0;
 			}	
+
+			
 
 			.spaceafter:after{
 				content: '\00a0';

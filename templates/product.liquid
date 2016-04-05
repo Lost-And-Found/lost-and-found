@@ -53,13 +53,8 @@
 <div id="productwrapper">
 	<div class="images">
 		{% if product.images.size > 1 %}
-		<div class="leftcolumn">
-
-			{% for image in product.images %} 
-				<a href="{{ image.src | product_img_url: 'master' }}"><img src="{{ image.src | product_img_url: 'large' }}" alt="image.alt"></a>
-			{% endfor %}
-
-		</div><div class="rightcolumn">{% endif %}
+		<div class="rightcolumn">
+		{% endif %}
 			<div id="imagezoomed">
 				<img src="{{ product.featured_image | product_img_url: 'master' }}" alt="product.featured_image.alt">
 			</div>
@@ -67,7 +62,13 @@
 			{% for image in product.images %} 
 				<a href="{{ image.src | product_img_url: 'master' }}"><img src="{{ image.src | product_img_url: 'large' }}" alt="image.alt"></a>
 			{% endfor %}</div>
+		<div class="leftcolumn">
 
+			{% for image in product.images %} 
+				<a href="{{ image.src | product_img_url: 'master' }}"><img src="{{ image.src | product_img_url: 'large' }}" alt="image.alt"></a>
+			{% endfor %}
+
+		</div>
 
 
 	</div><div class="info">
@@ -154,7 +155,15 @@
 				<a href="#" class="sizeingchart dashafter">Sizing Chart</a>
 		{% endif %}-->
 
+		<ul class="product-tabs">
+			{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+				<li id="product-tabs"><a href="#">Details</a></li>
+			{% endif %}
+			<li id="product-tabs"><a href="#">Sizing</a></li>
+			<li id="product-tabs"><a href="#">Shipping</a></li>
+		</ul>
 
+		<!-- Product Discrpition -->
 		{% if product.description != "" %}
 			<div class="description" itemprop="description">
 				{{ product.description }}
@@ -177,11 +186,6 @@
 					 
 					</li>
 					
-					<!--
-					{% if product.metafields.c_f.sizes %}
-						<li><a href="#sizes">Sizes</a></li>
-					{% endif %}
-					-->
 				</ul>
 			{% endif %}
 
@@ -214,6 +218,7 @@
 					</div>
 				{% endif %}
 
+				<!-- Shipping info -->
 				{% if product.metafields.c_f.sizes %}
 					<div>	
 						{{ product.metafields.c_f.sizes}}
