@@ -154,78 +154,41 @@
 		{% if pages[bohdansizing].content != "" %}
 				<a href="#" class="sizeingchart dashafter">Sizing Chart</a>
 		{% endif %}-->
+		<div class="info-tabs">
+			<ul class="product-tabs">
+				{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+					<li id="product-tabs" class="active"><a href="#details">Details</a></li>
+				{% endif %}
+				<li id="product-tabs"><a href="#sizing">Sizing</a></li>
+				<li id="product-tabs"><a href="#shipping">Shipping</a></li>
+			</ul>
 
-		<ul class="product-tabs">
-			{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
-				<li id="product-tabs"><a href="#">Details</a></li>
-			{% endif %}
-			<li id="product-tabs"><a href="#">Sizing</a></li>
-			<li id="product-tabs"><a href="#">Shipping</a></li>
-		</ul>
-
-		<!-- Product Discrpition -->
-		{% if product.description != "" %}
-			<div class="description" itemprop="description">
-				{{ product.description }}
-			</div>
-
-		{% else %}
-				
-			{% if product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
-				<ul class="navproduct">
-					{% if product.metafields.c_f.overview-detail1 %}
-						<li><a href="#overview">Overview</a></li>
-
-						{% if product.metafields.c_f.sizes %}
-							<li>//</li>
-						{% endif %}
+			<div class="tab-content">
+				{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+			        <div id="details" class="tab active">
+			            {% include 'product-details' %}
+			        </div>
+		 		{% endif %}
+		        <div id="sizing" class="tab">
+		            <p>Sizing Chart</p>
+		            <p>Sizing</p>
+		        </div>
+		 
+		        <div id="shipping" class="tab">
+		            <p>Shipping + Returns</p>
+		            {% if product.price > 60000%}
+						<div class="freeshipping dashafter">
+							{{ pages["shipping-policy-north-america"].content }}
+						</div>
+					{% elsif product.price > 30000%}
+						<div class="freeshipping dashafter">
+							{{ pages["shipping-policy-canada"].content }}
+						</div>
 					{% endif %}
-					
-					
-					<li>
-					 
-					</li>
-					
-				</ul>
-			{% endif %}
+		        </div>
+	   		 </div>
+	   	</div>
 
-			<div>
-				{%if product.metafields.c_f.overview-detail1%}
-					<div>
-						<ul >
-							{%if product.metafields.c_f.overview-detail1%}
-								<li>{{product.metafields.c_f.overview-detail1}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail2%}
-								<li>{{product.metafields.c_f.overview-detail2}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail3%}
-								<li>{{product.metafields.c_f.overview-detail3}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail4%}
-								<li>{{product.metafields.c_f.overview-detail4}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail5%}
-								<li>{{product.metafields.c_f.overview-detail5}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail6%}
-								<li>{{product.metafields.c_f.overview-detail6}}</li>
-							{%endif%}
-							{%if product.metafields.c_f.overview-detail7%}
-								<li>{{product.metafields.c_f.overview-detail7}}</li>
-							{%endif%}
-						</ul>
-					</div>
-				{% endif %}
-
-				<!-- Shipping info -->
-				{% if product.metafields.c_f.sizes %}
-					<div>	
-						{{ product.metafields.c_f.sizes}}
-					</div>
-				{% endif %}
-			</div>
-		{% endif %}
 		
 		{% if product.price > 60000%}
 			<div class="freeshipping dashafter">
