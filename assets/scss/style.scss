@@ -246,6 +246,9 @@ h4{
 						padding: 2%;
 						background-color: #fff;
 						text-align: left;
+						-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+						box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 					}
 					#giftguide {
 						width: 200px;
@@ -253,6 +256,9 @@ h4{
 						padding: 2%;
 						background-color: #fff;
 						text-align: left;
+						-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
+						box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 					}
 				}
 
@@ -282,6 +288,8 @@ h4{
 			width: 100%;
 			text-align: center;
 			top: 100%;
+			z-index: 105;
+
 			span{
 				display: inline-block;
 				position: relative;

@@ -148,12 +148,7 @@
 						
 		</form>
 		{% endif %}
-		
-		
-		<!--
-		{% if pages[bohdansizing].content != "" %}
-				<a href="#" class="sizeingchart dashafter">Sizing Chart</a>
-		{% endif %}-->
+
 		<div class="info-tabs">
 			<ul class="product-tabs">
 				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
@@ -197,22 +192,7 @@
 					{% endif %}
 		        </div>
 	   		 </div>
-	   	</div>
-
-		
-		{% if product.price > 60000%}
-			<div class="freeshipping dashafter">
-				{{ pages["shipping-policy-north-america"].content }}
-			</div>
-		{% elsif product.price > 30000%}
-			<div class="freeshipping dashafter">
-				{{ pages["shipping-policy-canada"].content }}
-			</div>
-		{% endif %}
-
-
-		
-		
+	   	</div>		
 	</div>
 </div>
 
