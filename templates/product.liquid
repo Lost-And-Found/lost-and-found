@@ -154,13 +154,13 @@
 				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
 					<li id="product-tabs" class="active"><a href="#details">Details</a></li>
 				{% endif %}
-				<li id="product-tabs"><a href="#sizing">Sizing</a></li>
-				<li id="product-tabs"><a href="#shipping">Shipping</a></li>
+				<li class="tab-sizing"><a href="#sizing">Sizing</a></li>
+				<li class="tab-shipping"><a href="#shipping">Shipping</a></li>
 			</ul>
 
 			<div class="tab-content">
 				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
-			        <div id="details" class="tab active">
+			        <div class="tab-details" class="tab active">
 			            {% include 'product-details' %}
 			        </div>
 		 		{% endif %}
