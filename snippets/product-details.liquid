@@ -6,14 +6,10 @@
 
 {% else %}
 		
-	{% if product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+	{% if product.metafields.c_f.overview-detail1 %}
 		<ul class="navproduct">
 			{% if product.metafields.c_f.overview-detail1 %}
-				<!--<li><a href="#overview">Overview</a></li>-->
-
-				{% if product.metafields.c_f.sizes %}
-					<li>//</li>
-				{% endif %}
+				<!--<li><a href="#overview">Overview</a></li>-->				
 			{% endif %}
 			
 			
@@ -25,7 +21,7 @@
 	{% endif %}
 
 	<div>
-		{%if product.metafields.c_f.overview-detail1%}
+		{%if product.metafields.c_f.overview-detail1 %}
 			<div>
 				<ul >
 					{%if product.metafields.c_f.overview-detail1%}
@@ -49,14 +45,10 @@
 					{%if product.metafields.c_f.overview-detail7%}
 						<li>{{product.metafields.c_f.overview-detail7}}</li>
 					{%endif%}
+					{%if product.metafields.c_f.overview-detail8%}
+						<li>{{product.metafields.c_f.overview-detail7}}</li>
+					{%endif%}
 				</ul>
-			</div>
-		{% endif %}
-
-		<!-- Shipping info -->
-		{% if product.metafields.c_f.sizes %}
-			<div>	
-				{{ product.metafields.c_f.sizes}}
 			</div>
 		{% endif %}
 	</div>

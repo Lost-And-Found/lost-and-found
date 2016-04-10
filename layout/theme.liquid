@@ -73,7 +73,7 @@
 
 	<div id="topbar">
 		<div id="lefttopbar">
-			{% include 'currency-picker' %} Test
+			{% include 'currency-picker' %}
 		</div>
 		<div id="righttopbar">
 			<a href="/cart">cart ({{ cart.item_count }})</a>
@@ -85,82 +85,14 @@
 			</form>			
 		</div>
 	</div>
+	<!-- The page title is {{ page_title }} -->
 
-
-
-	
-	{% if settings.use_logo %}
-	<div id="logo">
-		<a href="/">{{ 'logo.png' | asset_url | img_tag: shop.name }}</a>
-	</div>
+	{% if page_title == 'Menswear built on quality, craftsmanship, heritage &amp; the classics' %}
+		{% include "home-nav" %}
+	{% else %}
+		{% include "mini-nav" %}
 	{% endif %}
-
-
-
-
-	<div id="nav" class="">
-		<div id="toggleicon">
-			<span id="toggleicon-top"></span>
-			<span id="toggleicon-middle"></span>
-			<span id="toggleicon-bottom"></span>
-		</div>
-		<div>
-		<ul>
-		{% for link in linklists[settings.main_linklist].links %}
-			<li class="{% if link.active %}selected{% endif %} {% if has_drop_down %}hassublinks{% endif %}">
-				
-				{% if link.title == "Brands" %}
-					<a href="#" id="brandslink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
-					<div id="navbrandlist">
-						{% include 'ourbrands' %}
-						<div class="exit">X</div>
-					</div>
-					
-				{% elsif  link.title == "Categories"%}
-					<a href="#" id="categorylink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
-					<div id="navcollectionlist">
-						<ul id="collections">
-							<li class="collectionlink">		
-								<a href="/collections/all" title="Browse All" class="shopall block">Shop All</a><br>
-								<a href="/collections/the-vault" title="Sale" class="shopall block dashafterleft">The Vault</a>
-							</li>{% for product_type in shop.types %}<li class="collectionlink">
-									{{ product_type | link_to_type }}
-								</li>{% endfor %}
-						</ul>
-						<div class="exit">X</div>
-					</div>
-					
-				{% elsif  link.title == "New Arrivals"%}
-					<a href="/collections/{{ link.handle }}?sort_by=created-descending" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>	
-					
-				{% elsif link.title == "Gift Guide" %}
-					<a href="#" id="giftlink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
-					<div id="giftguidelist">
-						<ul id="giftguide">
-							<li class="collectionlink shopall block">	<a href="/collections/gifts-under-50" title="Gifts under $50" class="shopall block">Gifts under $50</a> </li>
-							<li class="collectionlink shopall block">	<a href="/collections/gifts-from-50-100" title="Gifts from $100 - $200" class="shopall block">Gifts from $50 - $100</a> </li>
-							<li class="collectionlink shopall block">	<a href="/collections/gifts-from-100-200" title="Gifts from $100 - $200" class="shopall block">Gifts from $100 - $200</a> </li>
-							<li class="collectionlink shopall block">	<a href="/collections/gifts-over-200" title="Gifts over $200" class="shopall block">Gifts over $200</a></li>
-						</ul>
-						<div class="exit">X</div>
-					</div>
-					
-				{% else %}
-					<a href="{{link.url}}" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
-				
-					
-				{% endif %}
-			</li>
-		{% endfor %}					
-		</ul>
-		</div>
-	</div>
-
-	<div id="popoutnav">
-
-	</div>
-
-	<div class="linebottom"></div>
+	
 
 
 	{{ content_for_layout }}

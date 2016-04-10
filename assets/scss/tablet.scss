@@ -5,15 +5,23 @@
 
 
 /* Nav */
+	
+
 	#topbar{
 		#lefttopbar,#righttopbar{
 			display: block;
 			position: static;
 		}
-		#lefttopbar{
+
+		/* #lefttopbar{
 			display: none;
-		}
+		} */
 	}
+	#mobile-mini-logo {
+		display: block !important;
+
+	}
+
 	#nav{
 		position: fixed;
 		left: 0;

@@ -36,7 +36,7 @@
 </div>
 {% endif %}
 
-<div class="breadcrumbs">
+<div class="mx-width-breadcrumbs">
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
 	&#62;
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -94,7 +94,7 @@
 		{% if product.available == true %}
 
 			
-		<form action="/cart/add" class="dashafter" method="post" enctype="multipart/form-data" id="sizeselector">
+		<form action="/cart/add" class="spaceafter" method="post" enctype="multipart/form-data" id="sizeselector">
 			<label>Size</label>
 
 			{% if pages[bohdansizing].content != "" %}
@@ -156,7 +156,7 @@
 		{% endif %}-->
 		<div class="info-tabs">
 			<ul class="product-tabs">
-				{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
 					<li id="product-tabs" class="active"><a href="#details">Details</a></li>
 				{% endif %}
 				<li id="product-tabs"><a href="#sizing">Sizing</a></li>
@@ -164,25 +164,35 @@
 			</ul>
 
 			<div class="tab-content">
-				{% if product.description != "" or product.metafields.c_f.sizes or product.metafields.c_f.overview-detail1 %}
+				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
 			        <div id="details" class="tab active">
 			            {% include 'product-details' %}
 			        </div>
 		 		{% endif %}
+
 		        <div id="sizing" class="tab">
-		            <p>Sizing Chart</p>
-		            <p>Sizing</p>
+		        	<p>Sizing</p>
+		            {% if product.metafields.c_f.sizes %}
+		            	<div>
+		            		{{ product.metafields.c_f.sizes }}
+		            	</div>
+		            {% endif %}
 		        </div>
 		 
 		        <div id="shipping" class="tab">
 		            <p>Shipping + Returns</p>
+
 		            {% if product.price > 60000%}
-						<div class="freeshipping dashafter">
+						<div class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
 						</div>
 					{% elsif product.price > 30000%}
-						<div class="freeshipping dashafter">
+						<div class="freeshipping">
 							{{ pages["shipping-policy-canada"].content }}
+						</div>
+					{% else %}
+						<div class="freeshipping">
+							{{ pages["shipping-policy-basic"].content }}
 						</div>
 					{% endif %}
 		        </div>
