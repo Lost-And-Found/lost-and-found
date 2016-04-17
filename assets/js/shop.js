@@ -8,6 +8,7 @@ var app = {
 		}
 		app.mainNavigation.init();
 	},
+
 	mainNavigation: {
 		init: function() {
 			console.log("nav init")
@@ -118,6 +119,7 @@ var app = {
 			a = $(el).find("a")[0];
 		a.style.backgroundImage = "url(" + img.src + ")";
 	}
+
 }
 
 app.product = {
@@ -227,6 +229,48 @@ app.product = {
 
 }
 
+// this the tabs function//
+
+jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+        console.log(currentAttrValue);
+ 
+        // Show/Hide Tabs
+        // jQuery('.tab ' + currentAttrValue).show().siblings().hide();
+        if (currentAttrValue === "#sizing") {
+        	$("#sizing").addClass("active");
+        	$("#shipping").removeClass("active");
+        	$("#details").removeClass("hide");
+        	$(".details-area").removeClass("active").addClass("hide");
+
+        } else {
+    		$("#details").addClass("active");
+        }
+
+      	if (currentAttrValue === "#shipping") {
+	    	$("#shipping").addClass("active");
+	    	$("#sizing").removeClass("active");
+	    	$(".details-area").removeClass("active").addClass("hide");
+    	} else {
+    		$("#details").addClass("active");
+    	}
+
+          if (currentAttrValue === "#details") {
+          	$("#details").addClass("active");
+          	$(".details-area").removeClass("hide");
+        	$(".details-area").addClass("active");
+        	$("#shipping").removeClass("active");
+        	$("#sizing").removeClass("active");
+        }
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+
+
+ 
+        e.preventDefault();
+    });
+});
 
 
 

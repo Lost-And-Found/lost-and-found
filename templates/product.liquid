@@ -71,7 +71,8 @@
 		</div>
 
 
-	</div><div class="info">
+	</div>
+	<div class="info">
 		<h2 class="dashafter title">
 			{{ product.title }} 
 		</h2>
@@ -149,52 +150,59 @@
 		</form>
 		{% endif %}
 
-		<div class="info-tabs">
-			<ul class="product-tabs">
+		<div class="tabs">
+		<!-- our tab div, which has everything inside it starts here -->
+		<!-- <ul class="tab-links"> -->
+			<ul class="tab-links">
 				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
-					<li id="product-tabs" class="active"><a href="#details">Details</a></li>
+				<!-- each one of these li's are our titles -->
+			<li class="active links"><a href="#details">Details</a></li>
 				{% endif %}
-				<li class="tab-sizing"><a href="#sizing">Sizing</a></li>
-				<li class="tab-shipping"><a href="#shipping">Shipping</a></li>
+				<li class="links"><a href="#sizing">Sizing</a></li>
+				<li class="links"><a href="#shipping">Shipping</a></li>
 			</ul>
+		</div>
+		<!-- end of phyiscal tab titles.  -->
 
 			<div class="tab-content">
 				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
-			        <div class="tab-details" class="tab active">
+				<!-- <div id="details" class="tab"> -->
+			        <p id="details" class="tab">
 			            {% include 'product-details' %}
-			        </div>
+			        </p>
+			    <!-- </div> -->
 		 		{% endif %}
 
-		        <div id="sizing" class="tab">
+		        <div id="sizing" class="tab tab-sizing">
 		        	<p>Sizing</p>
 		            {% if product.metafields.c_f.sizes %}
-		            	<div>
+		            	<p>
 		            		{{ product.metafields.c_f.sizes }}
-		            	</div>
+		            	</p>
 		            {% endif %}
 		        </div>
 		 
-		        <div id="shipping" class="tab">
+		        <div id="shipping" class="tab tab-sizing">
 		            <p>Shipping + Returns</p>
 
 		            {% if product.price > 60000%}
-						<div class="freeshipping">
+						<p class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
-						</div>
+						</p>
 					{% elsif product.price > 30000%}
-						<div class="freeshipping">
+						<p class="freeshipping">
 							{{ pages["shipping-policy-canada"].content }}
-						</div>
+						</p>
 					{% else %}
-						<div class="freeshipping">
+						<p class="freeshipping">
 							{{ pages["shipping-policy-basic"].content }}
-						</div>
+						</p>
 					{% endif %}
 		        </div>
 	   		 </div>
-	   	</div>		
+	   	</div>	
 	</div>
-</div>
+<!-- </div> extra div--> 
 
 {% assign limit = 3 %}
 {% assign skip_product = product %}
