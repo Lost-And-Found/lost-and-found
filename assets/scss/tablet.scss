@@ -206,10 +206,17 @@
 		}
 		> .mobileimage{
 			display: block;
+		    width: 85%;
+		    max-width: 750px;
+		    margin: 0 auto;
+		}
+		> .rightcolumn {
+			width: auto;
+			display:block !important;
+			margin: 0 auto;
 		}
 	}
-	
-	
+
 	.info {
 		width: 100%;
 		margin: 4em 0 2em 0em;
@@ -241,6 +248,11 @@
 
 	}
 	
+}
+.tabs, .tab-content {
+	display: block;
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* index */
