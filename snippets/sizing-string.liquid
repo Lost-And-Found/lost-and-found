@@ -1,0 +1,4 @@
+{% if product.metafields.c_f.sizes != "" %}
+	{% assign size-chart-string = product.metafields.c_f.sizes | split: ',' %}
+	{% assign size-chart-substring = size-chart-string | split: '--' %}
+{% endif %}

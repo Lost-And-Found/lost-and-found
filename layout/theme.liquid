@@ -84,16 +84,10 @@
 				<input type="submit" class="submit" value="»">
 			</form>			
 		</div>
-	</div>
-	<!-- The page title is {{ page_title }} -->
-
-	{% if page_title == 'Menswear built on quality, craftsmanship, heritage &amp; the classics' %}
-		{% include "home-nav" %}
-	{% else %}
-		{% include "mini-nav" %}
-	{% endif %}
+	</div>	
+	{% include "mini-nav" %}
 	
-
+	<!--	{% include "cookie" %} -->
 
 	{{ content_for_layout }}
 

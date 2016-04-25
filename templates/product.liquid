@@ -118,24 +118,26 @@
 				<select name="id">
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
-							
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% else %}
-							
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
-			
-			{% if nocart == false %}
-				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
-			{% endif %}
-			
-			{% if nocart == true %}	
+
+			{% for product.selected_variant %}
+				{% if  variant.inventory_quantity == "0" %}
+					This product is unavailable
+				{% endif %}
+			{% endfor %}
+
+			{% if nocart == true %}
 				<div class="nocart">
 					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
-				</div>
+				</div>	
+			{% else %}
+				<input type="submit" name="add" id="add" value="Add to Cart" class="button">			
 			{% endif %}
 
 			{% if sizesoldout == true %}
@@ -175,6 +177,7 @@
 		 		<!-- NOTE TO SELF: pull ifstatement outside of div before publishing theme -->
 		        <div id="sizing" class="tab tab-sizing">
 		        	<p>Sizing</p>
+						{{ size-chart-string }}
 		            {% if product.metafields.c_f.sizes %}
 		            	<p>
 		            		{{ product.metafields.c_f.sizes }}
