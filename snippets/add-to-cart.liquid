@@ -1,0 +1,24 @@
+<form action="/cart/add" method="post" id="product-form" class="quickAdd" enctype="multipart/form-data">
+	{% assign hide_default_title = false %}
+
+	{% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+		{% assign hide_default_title = true %}
+	{% endif %}
+	<div id="product-variants" class="{% if hide_default_title %} hidden{% endif %}">
+		<select id="product-select" name="id" class="hidden">
+			{% for variant in product.variants %}
+				<option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">
+					{{ variant.title }} - {{ variant.price | money }}
+				</option>
+			{% endfor %}
+		</select>
+	</div><!-- Add Quantity Box before Add to Cart -->
+	<input for="quantity" min="1" type="number" id="quantity" name="quantity" value="1" />
+	     <style>#quantity {width: 20px; border: 1px solid #333; margin-bottom: 5px; font-size: 14px; padding: 10px;}</style>
+	<!-- END Add Quantity Box before Add to Cart -->
+		{% if product.available%}
+				<input type="submit" value="{{ 'products.product.add_to_cart' | t }}" id="add" class="btn add-to-cart" />
+	    {% else %}
+	          	<input type="submit" value="{{ 'products.product.sold_out' | t }}" id="add" class="btn add-to-cart disabled" disabled="disabled" style="opacity: 0.5;">
+	    {% endif %}
+</form>
