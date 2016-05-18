@@ -178,10 +178,12 @@
 		            {% if product.price > 60000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
+							{{ pages["shipping-policy-basic"].content }}
 						</p>
 					{% elsif product.price > 30000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-canada"].content }}
+							{{ pages["shipping-policy-basic"].content }}
 						</p>
 					{% else %}
 						<p class="freeshipping">
