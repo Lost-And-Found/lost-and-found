@@ -109,7 +109,7 @@
 						{% if variant.available == true %}
 							<li {% if forloop.first %}class="selected"{% endif %}><a href="{{ variant.id }}">{{ variant.title }} {% if variant.inventory_quantity == 1 %}<span> {{ variant.inventory_quantity }} LEFT </span>{% endif %} </a></li>
 						{% else %}
-							<li {% if forloop.first %}class="selected strike red"{% else %} class="strike red" {% endif %}><a href="{{ variant.id }}">{{ variant.title }} <span> SOLD OUT</span> </a></li>
+							<!--<li {% if forloop.first %}class="selected strike red"{% else %} class="strike red" {% endif %}><a href="null">{{ variant.title }} <span> SOLD OUT</span> </a></li>-->
 						{% endif %}
 					{% endfor %}
 				</ul>
@@ -121,24 +121,19 @@
 						{% if variant.available == true %}
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
 						{% else %}
-							<option value="{{variant.id}}"> {{ variant.title }}</option>
+							<!--<option value="null">{{ variant.title }}</option> -->
 						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
-
-			{% for variant in product.selected_or_first_available_variant %}
-				{% if  variant.inventory_quantity == 0 %}
-					<p>show this text if unavail</p>
-				{% endif %}
-			{% endfor %}
-			
 			{% if nocart == true %}
 				<div class="nocart">
 					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
 				</div>	
+			{% elsif variant.available == true %}
+				<input type="submit" name="add" {% if variant.available == true %}id="add"{% endif %} value="Add to Cart" class="button">	
 			{% else %}
-				<input type="submit" name="add" id="add" value="Add to Cart" class="button">			
+				<input type="submit" name="add" {% if variant.available == true %}id="add"{% endif %} value="Add to Cart" class="button">	
 			{% endif %}
 
 			{% if sizesoldout == true %}
@@ -161,7 +156,7 @@
 			<li class="active links"><a href="#details">Details</a></li>
 				{% endif %}
 				<li class="links"><a href="#sizing">Sizing</a></li>
-				<li class="links"><a href="#shipping">Shipping</a></li>
+				<li class="links"><a href="#shipping">Returns</a></li>
 			</ul>
 		</div>
 		<!-- end of phyiscal tab titles.  -->
@@ -174,27 +169,21 @@
 			        </p>
 			    <!-- </div> -->
 		 		{% endif %}
-		 		<!-- NOTE TO SELF: pull ifstatement outside of div before publishing theme -->
+
 		        <div id="sizing" class="tab tab-sizing">
-		        	<p>Sizing</p>
-						{{ size-chart-string }}
-		            {% if product.metafields.c_f.sizes %}
-		            	<p>
-		            		{{ product.metafields.c_f.sizes }}
-		            	</p>
-		            {% endif %}
+		        	{{ pages["gen-sizing"].content }}
 		        </div>
 		 
 		        <div id="shipping" class="tab tab-sizing">
-		            <p>Shipping + Returns</p>
-
 		            {% if product.price > 60000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
+							{{ pages["shipping-policy-basic"].content }}
 						</p>
 					{% elsif product.price > 30000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-canada"].content }}
+							{{ pages["shipping-policy-basic"].content }}
 						</p>
 					{% else %}
 						<p class="freeshipping">
