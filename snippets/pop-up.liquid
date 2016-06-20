@@ -13,8 +13,10 @@
 		<!-- email capture snip thing -->
 		<div class="form--contact">
 			<label for="contact_form_email">Email <span class="red">*</span></label>
+			<form id="module--form">
 			<input type="text" id="contact_form_email" name="contact[email]" required pattern="[^ @]*@[^ @]*" value="{{ contact.fields.email }}"/>
 			<input type='submit' class="submit action_button" value="Submit" />
+			</form>
 		</div>
 	</span>
 </div>

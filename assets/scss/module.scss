@@ -1,5 +1,7 @@
 // this is where jazz is writing her scss for the module pop, she is importing it in style.scss
-
+.module--notvisible {
+	display:none;
+}
 .module--visible {
 	background-color:seagreen;
 	position:absolute;
