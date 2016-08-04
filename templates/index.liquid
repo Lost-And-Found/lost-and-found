@@ -2,7 +2,7 @@
 {% include 'pop-up' %}
 <!-- {{ page.content }} -->
 
-{% include 'index-hero' %} 
+{% include 'index-hero' %}
 
 <h4 >Recent Articles</h4>
 
@@ -14,6 +14,9 @@
 				</div>
 			</div>
 			<div class="articlecontent-inline">
+				{% if article.image %}
+  					{{ article | img_url: 'large' }}
+				{% endif %}
 				{{ article.excerpt }}
 			</div>
 			<div>
@@ -26,6 +29,3 @@
 <h4 id="brandlisttitle">Our Brands</h4>
 
 {% include 'ourbrands' %}
-
-
-

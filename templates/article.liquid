@@ -10,12 +10,20 @@
 <h4>{{ article.title }}</h4>
 
 <div id="articlecontent">
+	<div class="left-article">
+	  <!-- Look for images -->
+		{% if article.content contains "<img" %}
+	    {% assign src = article.content | split: 'src="' %}
+	    {% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}
+		{% endif %}
+		<!-- images -->
+		{{ src }}
+		
 	<div class="article">
 		{{ article.content }}
+	</div>
 
-	</div><div class="listofblogs">
-
-
+	<div class="listofblogs">
 		<h3>Recent Articles</h3>
 		<ul>
 			{% for article in blogs["blog"].articles limit:5 %}

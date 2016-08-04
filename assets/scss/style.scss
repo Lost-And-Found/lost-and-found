@@ -66,13 +66,13 @@ h4{
 	display: inline-block;
 	width: 1px;
 	background-color: $font-color;
-	height: 100%; 
+	height: 100%;
 }
 .linebottom{
 	border-bottom: solid 1px $border-color;
 }
 .linetop{
-	border-top: solid 1px $border-color;	
+	border-top: solid 1px $border-color;
 }
 .strike{
 	text-decoration: line-through;
@@ -117,10 +117,10 @@ h4{
 			left: 0;
 			padding: 0.4em 2em;
 		}
-		
+
 		.currency-picker{
 			 border: 1px solid grey;
-			 // background: url(//cdn.shopify.com/s/files/1/0113/7222/t/18/assets/dropdown-arrow.png?16430886081012957079) no-repeat 86% 43%;
+			 background: url("//cdn.shopify.com/s/files/1/0113/7222/t/18/assets/dropdown-arrow.png?16430886081012957079") no-repeat 86% 43%;
 			 border-radius: 0;
 			 -webkit-border-radius: 0;
 			 -moz-border-radius: 0;
@@ -133,7 +133,7 @@ h4{
 			 color: $font-color;
 			 font-family: 'Courier New', Courier, monospace;
 		}
-		
+
 		#righttopbar{
 			display: inline-block;
 			padding: 0.1em .5em 0.5em 0;
@@ -152,11 +152,11 @@ h4{
 				margin: 0;
 				padding: 0;
 				-moz-border-radius: 0px;
-				-webkit-border-radius: 0px;			
+				-webkit-border-radius: 0px;
 				border-radius: 0px;
 				border: none;
 				display: inline-block;
-				background: $bk-color;			
+				background: $bk-color;
 			}
 			.search_box{
 				padding: 6px 0px 6px 8px;
@@ -170,7 +170,7 @@ h4{
 				width: 29px;
 				margin-left: -5px;
 				vertical-align: top;
-				margin-top: 5px;			
+				margin-top: 5px;
 			}
 		}
 	}
@@ -178,7 +178,7 @@ h4{
 	#logo{
 		text-align: center;
 		padding: 60px 0 45px 0;
-			
+
 			img {
 				width: 300px;
 			}
@@ -198,7 +198,7 @@ h4{
 		display: none;
 		text-align: center;
 		padding: 20px ;
-			
+
 			img {
 				width: 200px;
 			}
@@ -326,9 +326,9 @@ h4{
 		}
 		a:hover{
 			color: $font-hover-color;
-		}	
+		}
 	}
-	
+
 	#giftguide{
 		width: 400px;
 		margin:auto;
@@ -342,7 +342,7 @@ h4{
 		}
 		a:hover{
 			color: $font-hover-color;
-		}	
+		}
 	}
 
 
@@ -382,7 +382,7 @@ h4{
 		#navcollectionlist #collections,#navbrandlist #brandlist{
 			// -webkit-column-count: 2;
 			// -moz-column-count: 2;
-			// column-count: 2;	
+			// column-count: 2;
 		}
 	}
 	#collections{
@@ -414,7 +414,7 @@ h4{
 
 	#footer{
 		@extend .linetop;
-		background-color: #fff;	
+		background-color: #fff;
 		padding: 60px;
 		> div{
 			max-width: $max-width;
@@ -441,7 +441,7 @@ h4{
 					border-bottom: 1px solid $font-color;
 					display: block;
 					width: 10px;
-					padding: 0;	
+					padding: 0;
 					margin: 20px 0;
 				}
 			}
@@ -454,11 +454,11 @@ h4{
 			margin: 0;
 			padding: 0;
 			-moz-border-radius: 0px;
-			-webkit-border-radius: 0px;			
+			-webkit-border-radius: 0px;
 			border-radius: 0px;
 			border: none;
 			display: inline-block;
-			background: $bk-color;			
+			background: $bk-color;
 		}
 		#contact_email{
 			padding: 6px 1px 6px 6px;
@@ -473,30 +473,30 @@ h4{
 			height: 21px;
 			margin-left: 5px;
 			vertical-align: top;
-			margin-top: 5px;	
+			margin-top: 5px;
 			width: 29px;
-			height: 29px;		
-		}	
-		
+			height: 29px;
+		}
+
 		.social_link {
 			margin-top: 15px;
 			transition: all 0.5s ease-out;
 			-o-transition: all 0.5s ease-out;
 			-moz-transition: all 0.5s ease-out;
 			-webkit-transition: all 0.5s ease-out;
-			
+
 			img:hover {
 				opacity: 0.5;
 			}
-			
+
 			img {
 				width: 50px;
 			}
 		}
-		
+
 	}
 
- 
+
 
 	.products{
 		max-width: $max-width;
@@ -519,8 +519,8 @@ h4{
 			}
 			.rollover{
 				position: relative;
-				
-				
+
+
 				.backgroundimageone{
 					z-index: 99;
 					height: 300px;
@@ -533,7 +533,7 @@ h4{
 					background-size: contain;
 					background-repeat: no-repeat;
 					background-position: center;
-					background-color: #fff;		
+					background-color: #fff;
 					.bk2{
 						-webkit-background-size: contain;
 						-moz-background-size: contain;
@@ -542,10 +542,10 @@ h4{
 						background-repeat: no-repeat;
 						background-position: center;
 						background-color: #fff;
-						
-					}		
+
+					}
 					&:hover{
-					
+
 						.bk2{
 							height: 300px;
 						}
@@ -556,7 +556,7 @@ h4{
 					> div{
 							position: absolute;
 							overflow: hidden;
-							width: 100%;				
+							width: 100%;
 						ul{
 							background: #ececec;
 							position: relative;
@@ -567,7 +567,7 @@ h4{
 							transition: all 0.5s ease-out;
 							-o-transition: all 0.5s ease-out;
 							-moz-transition: all 0.5s ease-out;
-							-webkit-transition: all 0.5s ease-out;								
+							-webkit-transition: all 0.5s ease-out;
 						}
 						li{
 							padding: 1em;
@@ -580,11 +580,11 @@ h4{
 					background-color: #fc0;
 					.slideupsize{
 						ul {
-							top: 0;						
+							top: 0;
 						}
 					}
 				}
-						
+
 			}
 			.title{
 
@@ -601,8 +601,8 @@ h4{
 				border-bottom: 1px solid $font-color;
 				display: block;
 				width: 10px;
-				padding: 0;	
-				margin: 20px auto;					
+				padding: 0;
+				margin: 20px auto;
 			}
 		}
 		.sale{
@@ -614,12 +614,12 @@ h4{
 			font-size: 15px;
 			text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 			color: red;
-			z-index: 99;		
+			z-index: 99;
 		}
 		a:hover{
 			color: #000;
 		}
-		
+
 		.exclusive {
 			background: darkgrey;
 			color: white;
@@ -676,8 +676,8 @@ h4{
 					margin: 0;
 					padding: 0;
 					font-weight: normal;
-					line-height: 1em;	
-				}		
+					line-height: 1em;
+				}
 			}
 			.articlecontent-inline{
 				letter-spacing:0px;
@@ -700,15 +700,15 @@ h4{
 						display: block;
 						width: 10px;
 						padding: 0;
-						margin: 20px auto;					
+						margin: 20px auto;
 					}
 					&:after{
 						content: '\0020';
 						border-bottom: 1px solid $font-color;
 						display: block;
 						width: 10px;
-						padding: 0;	
-						margin: 20px 0;		
+						padding: 0;
+						margin: 20px 0;
 					}
 				}
 			}
@@ -768,7 +768,7 @@ h4{
 					transition: all 0.2s ease-out;
 					-o-transition: all 0.2s ease-out;
 					-moz-transition: all 0.2s ease-out;
-					-webkit-transition: all 0.2s ease-out;	
+					-webkit-transition: all 0.2s ease-out;
 				 }
 				img{
 					border: solid 1px $border-color;
@@ -817,7 +817,7 @@ h4{
 			display: inline-block;
 			padding: 10px;
 			border-bottom: 1px solid $border-color;
-			opacity: 0.5;	
+			opacity: 0.5;
 
 			a:hover {
 				transition: all 0.1s ease-out;
@@ -841,7 +841,7 @@ h4{
 			a {
 				color: black !important;
 				text-decoration: none;
-			}	
+			}
 		}
 
 		.info{
@@ -851,20 +851,20 @@ h4{
 				border-bottom: 1px solid $font-color;
 				display: block;
 				width: 10px;
-				padding: 0;	
+				padding: 0;
 				margin: 0 0 20px 0;
-			}	
+			}
 
-			
+
 
 			.spaceafter:after{
 				content: '\00a0';
 				/*border-bottom: 1px solid $font-color;*/
 				display: block;
 				width: 10px;
-				padding: 0;	
+				padding: 0;
 				margin: 10px 0;
-			}	
+			}
 
 			.title{
 				font-size: 20px;
@@ -909,7 +909,7 @@ h4{
 				font-size: 1em;
 				display: inline-block;
 				border: 0;
-				border-radius: 0;				
+				border-radius: 0;
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				background-position: 82px 7px;
@@ -933,7 +933,7 @@ h4{
 				transition: all .2s linear;
 				-o-transition: all .2s linear;
 				-moz-transition: all .2s linear;
-				-webkit-transition: all .2s linear;				
+				-webkit-transition: all .2s linear;
 			}
 			input:hover{
 				background-color: $bk-dark-color;
@@ -951,7 +951,7 @@ h4{
 				position: relative;
 				background-color: #fff;
 			}
-			
+
 			#selector:after{
 				content: "\00BB";
 				position: absolute;
@@ -959,7 +959,7 @@ h4{
 				right: 1em;
 				top: 22%;
 			}
-			
+
 			.nocart{
 				font-size: 0.8em;
 				line-height: 1.6em;
@@ -998,7 +998,7 @@ h4{
 					transition: all .2s linear;
 					-o-transition: all .2s linear;
 					-moz-transition: all .2s linear;
-					-webkit-transition: all .2s linear;						
+					-webkit-transition: all .2s linear;
 				}
 				a:hover{
 					color: white;
@@ -1049,20 +1049,20 @@ h4{
 	}
 
 	.sizing{
-		
-		
-		overflow: hidden;	
+
+
+		overflow: hidden;
 		height: 0px;
 		background-color: white;
 		&.open{
 			border-bottom: 1px solid $border-color;
 		}
-		
+
 		-webkit-transition: height 0.5s;
 		-moz-transition: height 0.5s;
 		-o-transition: height 0.5s;
 		transition: height 0.5s;
-		
+
 		.mini{
 				position: absolute;
 				font-size: 1em;
@@ -1077,19 +1077,19 @@ h4{
 				margin: 10px 10px;
 				border: 1px solid $border-color;
 				padding: 8px 0px 5px 1px;
-				
+
 				a:hover{
 					color: $font-hover-color;
 					border: 1 solid $font-hover-color;
-					
+
 					-webkit-transition: all 0.3s;
 					-moz-transition: all 0.3s;
 					-o-transition: all 0.3s;
 					transition: all 0.3s;
 				}
 		}
-		
-		
+
+
 		img {
 			float: left;
 			display: block;
@@ -1097,7 +1097,7 @@ h4{
 			width: auto;
 			margin:0 6em 0 3em;
 		}
-		
+
 		> div{
 			max-width: $max-width;
 			width: $stick-width;
@@ -1106,23 +1106,23 @@ h4{
 			margin: auto;
 			position: relative;
 			padding: 3em 0;
-			
-			
+
+
 			tbody {
 				margin: 0 auto;
-				
+
 			}
 
 		}
-	}	
+	}
 
 	.ship-pol {
 		margin-top: 10px;
 		font-weight: bold;
-		
+
 		span {
 			font-size: 10px;
-			line-height: 10px;	
+			line-height: 10px;
 			font-weight: 100;
 		}
 	}
@@ -1179,27 +1179,27 @@ h4{
 			}
 		}
 		.title{
-			text-transform: uppercase;	
-			width: 65%;			
+			text-transform: uppercase;
+			width: 65%;
 			> div{
 				padding-bottom: 17px;
 				&:before{
 					@extend .dash;
 					margin-bottom: 17px;
-				}	
+				}
 			}
 		}
 		.item.price{
 			&:before{
 				@extend .dash;
 				margin-bottom: 17px;
-			}	
+			}
 		}
 		.item.qty {
 			&:before{
 				@extend .dash;
 				margin-bottom: 17px;
-			}	
+			}
 			input{
 				width: 3em;
 				background-color: #fff;
@@ -1221,7 +1221,7 @@ h4{
 				background-color: $bk-dark-color;
 				display: block;
 				font-size: 16px;
-				font-weight: bold;				
+				font-weight: bold;
 				padding: 3px 7px 13px 9px;
 				margin: 1em 0.1em;
 				width: 12px;
@@ -1233,7 +1233,7 @@ h4{
 				transition: background-color 0.5s ease-out;
 				-o-transition: background-color 0.5s ease-out;
 				-moz-transition: background-color 0.5s ease-out;
-				-webkit-transition: background-color 0.5s ease-out;					
+				-webkit-transition: background-color 0.5s ease-out;
 				&:hover{
 					background-color: $font-color;
 				}
@@ -1262,7 +1262,7 @@ h4{
 			}
 			.rightcheckout{
 				width: 20%;
-				text-transform: uppercase;				
+				text-transform: uppercase;
 				.subtotal:after{
 					@extend .dash;
 					padding-bottom: 17px;
@@ -1292,7 +1292,7 @@ h4{
 					#email {
 						padding: 1em 0em !important;
 						text-align: center;
-					}						
+					}
 				}
 			}
 		}
@@ -1323,7 +1323,7 @@ h4{
 			> span.block{
 				display: inline-block;
 				width: 49%;
-			}			
+			}
 			.dashafterleft:after{
 				@extend .dash;
 				margin: 15px 0;
@@ -1346,7 +1346,7 @@ h4{
 				width: 100%;
 				padding: 6px;
 				font-size: 10px;
-				margin-bottom: 12px;				
+				margin-bottom: 12px;
 				background-color: #fff;
 			}
 
@@ -1430,7 +1430,7 @@ h4{
 			&:after{
 				@extend .dash;
 				margin: 20px 0 160px 0;
-			}			
+			}
 		}
 	}
 
@@ -1452,7 +1452,7 @@ h4{
 				p:first-child{
 					display: none;
 				}
-				
+
 				div > a {
 					display: none;
 				}
@@ -1488,7 +1488,7 @@ h4{
 			p{
 				display: inline-block;
 			}
-		}		
+		}
 	}
 
 /* Pages */
@@ -1507,7 +1507,7 @@ h4{
     width:100%;
     display:inline-block;
 }
- 
+
     /*----- Tab Links -----*/
     /* Clearfix */
     .tab-links:after {
@@ -1519,14 +1519,14 @@ h4{
     .tab-content {
     	height:auto;
     }
- 
+
     .tab-links li {
         margin:0px 5px;
         float:left;
         list-style:none;
         border-bottom: 1px solid #C7C7C7;
     }
- 
+
         .tab-links a {
             padding:9px 15px;
             display:inline-block;
@@ -1535,12 +1535,12 @@ h4{
             color:#797878;
             transition:all linear 0.15s;
         }
- 
+
         .tab-links a:hover {
             text-decoration:none;
             border-color: black;
         }
- 
+
     li.active a {
   		border-color: black;
         color:#4c4c4c;
@@ -1549,7 +1549,7 @@ h4{
     	border-color: black;
     	color: $font-hover-color;
     }
- 
+
     /*----- Content of Tabs -----*/
     .tab-content {
         padding:0px 15px;
@@ -1557,11 +1557,11 @@ h4{
         // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
         // background:#fff;
     }
- 
+
         .tab {
             display:none;
         }
- 
+
         .tab.active {
             display:block;
         }
@@ -1587,10 +1587,3 @@ h4{
 
 @import "tablet.scss";
 @import "mobile.scss";
-
-
-
-
-
-
-
