@@ -20,24 +20,24 @@
 		{% elsif product.type == "Shirts" %}
 			<img src="{{ 'shirt-icon.jpg' | asset_url }}">
 		{% elsif product.type == "T-Shirts" %}
-			<img src="{{ 't-shirt-icon.jpg' | asset_url }}">	
+			<img src="{{ 't-shirt-icon.jpg' | asset_url }}">
 		{% elsif product.type == "Shorts & Swim" or product.type == "Shorts" %}
 			<img src="{{ 'shorts-icon.jpg' | asset_url }}">
 		{% elsif product.type == "Sweatshirts" or product.type == "Sweaters" %}
 			<img src="{{ 'sweatshirt-icon.jpg' | asset_url }}">
 		{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
-			<img src="{{ 'jacket-icon.jpg' | asset_url }}">			
+			<img src="{{ 'jacket-icon.jpg' | asset_url }}">
 		{% endif %}
-		
+
 		{{ pages[bohdansizing].content }}
-		
+
 		<div class="mini"><a href="#">X</a></div>
 	</div>
 </div>
 {% endif %}
 
 <div class="mx-width-breadcrumbs">
-	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
+	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span>
 	&#62;
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 		{% if collection %}
@@ -59,12 +59,12 @@
 				<img src="{{ product.featured_image | product_img_url: 'master' }}" alt="product.featured_image.alt">
 			</div>
 		{% if product.images.size > 1 %}</div>{% endif %}<div class="mobileimage">
-			{% for image in product.images %} 
+			{% for image in product.images %}
 				<a href="{{ image.src | product_img_url: 'master' }}"><img src="{{ image.src | product_img_url: 'large' }}" alt="image.alt"></a>
 			{% endfor %}</div>
 		<div class="leftcolumn">
 
-			{% for image in product.images %} 
+			{% for image in product.images %}
 				<a href="{{ image.src | product_img_url: 'master' }}"><img src="{{ image.src | product_img_url: 'large' }}" alt="image.alt"></a>
 			{% endfor %}
 
@@ -74,7 +74,7 @@
 	</div>
 	<div class="info">
 		<h2 class="dashafter title">
-			{{ product.title }} 
+			{{ product.title }}
 		</h2>
 		<!-- {{product.vendor}}-{{product.type}} -->
 		<!-- {{ 'dropdown-arrow.png' | asset_url }} -->
@@ -92,17 +92,17 @@
 			{% if product.available == true %}<!-- CAD -->{% endif %}
 		</div>
 
-		
+
 		{% if product.available == true %}
 
-			
+
 		<form action="/cart/add" class="spaceafter" method="post" enctype="multipart/form-data" id="sizeselector">
 			<label>Size</label>
 
 			{% if pages[bohdansizing].content != "" %}
 				 <a href="#" class="sizeingchart">Size Chart</a>
 			{% endif %}
-			
+
 			<div id="sizesmenue">
 				<ul>
 					{% for variant in product.variants %}
@@ -132,13 +132,13 @@
 					<p>show this text if unavail</p>
 				{% endif %}
 			{% endfor %}
-			
+
 			{% if nocart == true %}
 				<div class="nocart">
 					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
-				</div>	
+				</div>
 			{% else %}
-				<input type="submit" name="add" id="add" value="Add to Cart" class="button">			
+				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
 
 			{% if sizesoldout == true %}
@@ -146,9 +146,9 @@
 				<input type="text" name="email" id="email" value="Email Address" class="button email">
 				<input type="submit" name="add" id="add" value="Submit" class="button">
 			{% endif %}
-			
-		
-						
+
+
+
 		</form>
 		{% endif %}
 
@@ -177,14 +177,21 @@
 		 		<!-- NOTE TO SELF: pull ifstatement outside of div before publishing theme -->
 		        <div id="sizing" class="tab tab-sizing">
 		        	<p>Sizing</p>
+							{% if Product.content contains "<table" %}
+						    {% assign sizechart = article.content %}
+							{% endif %}
+							
+							{{ sizechart }}
+							<!--
 						{{ size-chart-string }}
 		            {% if product.metafields.c_f.sizes %}
 		            	<p>
 		            		{{ product.metafields.c_f.sizes }}
 		            	</p>
 		            {% endif %}
+							-->
 		        </div>
-		 
+
 		        <div id="shipping" class="tab tab-sizing">
 		            <p>Shipping + Returns</p>
 
@@ -203,9 +210,9 @@
 					{% endif %}
 		        </div>
 	   		 </div>
-	   	</div>	
+	   	</div>
 	</div>
-<!-- </div> extra div--> 
+<!-- </div> extra div-->
 
 {% assign limit = 3 %}
 {% assign skip_product = product %}
@@ -223,4 +230,3 @@
 <h4 id="brandlisttitle">Our Brands</h4>
 
 {% include 'ourbrands' %}
-

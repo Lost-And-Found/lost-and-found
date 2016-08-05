@@ -10,17 +10,27 @@
 <h4>{{ article.title }}</h4>
 
 <div id="articlecontent">
-	<div class="left-article">
+	<div class="article-images">
 	  <!-- Look for images -->
 		{% if article.content contains "<img" %}
-	    {% assign src = article.content | split: 'src="' %}
-	    {% assign src = src[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}
+	    {% assign artimg = article.content | split: 'src="' %}
+	    {% assign artimg = artimg[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' | replace: 'grande', 'master'; %}
 		{% endif %}
-		<!-- images -->
-		{{ src }}
-		
+		<!-- images  -->
+		<li>
+			<img src="{{ artimg }}">
+		</li>
+
+	</div>
+
 	<div class="article">
-		{{ article.content }}
+		{% if article.content contains "" %}
+	    {% assign artcont = article.content %}
+		{% endif %}
+
+		{{ artcont }}
+
+	<!--	{{ article.content }} -->
 	</div>
 
 	<div class="listofblogs">

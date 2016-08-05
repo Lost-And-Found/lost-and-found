@@ -14,9 +14,10 @@
 				</div>
 			</div>
 			<div class="articlecontent-inline">
-				{% if article.image %}
-  					{{ article | img_url: 'large' }}
-				{% endif %}
+				<!-- Add feature image -->
+
+  			<img href=" {{ article | img_url: 'large' }} ">
+
 				{{ article.excerpt }}
 			</div>
 			<div>
