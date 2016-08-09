@@ -13,13 +13,20 @@
 	<div class="article-images">
 	  <!-- Look for images -->
 		{% if article.content contains "<img" %}
-	    {% assign artimg = article.content | split: 'src="' %}
-	    {% assign artimg = artimg[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' | replace: 'grande', 'master'; %}
+	    {% assign artimgs = article.content | split: 'src="' %}
+	    <!--{% assign artimgs = artimgs[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}-->
 		{% endif %}
 		<!-- images  -->
+		<ul>
+
+		<!--	{% for artimg in artimgs %}-->
 		<li>
-			<img src="{{ artimg }}">
+			{{ artimgs }}
+			<!--<img src="{{ artimg }}">-->
 		</li>
+	<!--	{% endfor %} -->
+
+		</ul>
 
 	</div>
 

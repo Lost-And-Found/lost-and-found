@@ -177,11 +177,12 @@
 		 		<!-- NOTE TO SELF: pull ifstatement outside of div before publishing theme -->
 		        <div id="sizing" class="tab tab-sizing">
 		        	<p>Sizing</p>
-							{% if Product.content contains "<table" %}
-						    {% assign sizechart = article.content %}
+							{% if product.details contains <table %}
+						    {% assign sizechart = product.details %}
+
 							{% endif %}
-							
-							{{ sizechart }}
+
+							{{ product.description | json }}
 							<!--
 						{{ size-chart-string }}
 		            {% if product.metafields.c_f.sizes %}
