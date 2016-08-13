@@ -11,7 +11,7 @@
 		<div>
 
 
-		<ul>	
+		<ul>
 			<li id="mini-logo"><a href="/">{{ 'logo.png' | asset_url | img_tag: shop.name }}</a></li>
 		{% for link in linklists[settings.main_linklist].links %}
 			<li class="{% if link.active %}selected{% endif %} {% if has_drop_down %}hassublinks{% endif %}">
@@ -21,24 +21,32 @@
 						{% include 'ourbrands' %}
 						<div class="exit">X</div>
 					</div>
-					
+
 				{% elsif  link.title == "Categories"%}
 					<a href="#" id="categorylink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
 					<div id="navcollectionlist">
 						<ul id="collections">
-							<li class="collectionlink">		
+							<li class="collectionlink">
 								<a href="/collections/all" title="Browse All" class="shopall block">Shop All</a><br>
 								<a href="/collections/the-vault" title="Sale" class="shopall block dashafterleft">The Vault</a>
-							</li>{% for product_type in shop.types %}<li class="collectionlink">
+							{% comment %}</li>{% for product_type in shop.types %}<li class="collectionlink">
 									{{ product_type | link_to_type }}
-								</li>{% endfor %}
+								</li>{% endfor %}{% endcomment %}
+
+								{% for product_type in shop.types %}
+								    {% unless forloop.first %}
+								        <li class="collectionlink {% if product_type == collection.title %} active {% endif %}">
+								            {{ product_type | link_to_type }}
+								        </li>
+								    {% endunless %}
+								{% endfor %}
 						</ul>
 						<div class="exit">X</div>
 					</div>
-					
+
 				{% elsif  link.title == "New Arrivals"%}
-					<a href="/collections/{{ link.handle }}?sort_by=created-descending" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>	
-					
+					<a href="/collections/{{ link.handle }}?sort_by=created-descending" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+
 				{% elsif link.title == "Gift Guide" %}
 					<a href="#" id="giftlink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
 					<div id="giftguidelist">
@@ -50,14 +58,14 @@
 						</ul>
 						<div class="exit">X</div>
 					</div>
-					
+
 				{% else %}
 					<a href="{{link.url}}" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
-				
-					
+
+
 				{% endif %}
 			</li>
-		{% endfor %}					
+		{% endfor %}
 		</ul>
 		</div>
 	</div>
