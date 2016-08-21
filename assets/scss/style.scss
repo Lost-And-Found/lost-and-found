@@ -1376,18 +1376,34 @@ h4{
 
 /* Articles */
 	#articlecontent{
-		max-width: $max-width;
-		width: $stick-width;
+		width: 100%;
 		margin:auto;
+		.article-images {
+			display: inline-block;
+			width: 50%;
+			ul{
+				list-style: none;
+
+				li{
+					list-style: none;
+					margin-bottom: -10px;
+				}
+			}
+			img{
+				width: 100%;
+			}
+		}
+
 		.article{
-			width: 70%;
+			width: 39%;
+			margin: 0 5%;
 			vertical-align: top;
 			display: inline-block;
 			img{
-				border: solid 1px $border-color;
+				display: none;
 			}
 			p:first-child{
-				text-align: center;
+				text-align: left;
 				padding-bottom: 30px;
 			}
 			p{
@@ -1433,6 +1449,7 @@ h4{
 			}
 		}
 	}
+
 
 /* Blogs */
 

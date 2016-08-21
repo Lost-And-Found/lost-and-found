@@ -7,27 +7,9 @@
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{ article.title }}</span></span>
 </div>
 
-<h4>{{ article.title }}</h4>
 
 <div id="articlecontent">
 	<div class="article-images">
-	  <!-- Look for images
-		{% if article.content contains "<img" %}
-	    {% assign artimgs = article.content | split: 'src="' %}
-	    <!--{% assign artimgs = artimgs[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}-->
-		{% endif %}
-		<!-- images
-		<ul>
-
-		<!--	{% for artimg in artimgs %}
-		<li>
-			{{ artimgs }}
-			<!--<img src="{{ artimg }}"
-		</li>
-	<!--	{% endfor %}
-
-		</ul>-->
-
 		<ul>
 		     {% if article.content contains "<img" %}
 		          {% assign content-src = article.content | split: 'src="' %}
@@ -37,22 +19,26 @@
 		<li>
 		<img src="{{src}}" />
 		</li>
-		      {% endfor %}
-
+		     {% endfor %}
 		     {% else %}
 		     {% endif %}
-
 		</ul>
 	</div>
 
 	<div class="article">
-		{% if article.content contains "" %}
-	    {% assign artcont = article.content %}
+
+			<h4>{{ article.title }}</h4>
+			{{ article.content }}
+
+		{% if blog.next-article != false %}
+			<a href="{{ blog.next-article }}"> <h3> Next article </h3></a>
+			{{ blog.next-article }}
 		{% endif %}
 
-		{{ artcont }}
+		{% if blog.previous-article != false %}
+			<a href="{{ blog.previous-article }}"> <h3> Previous article </h3></a>
+		{% endif %}
 
-	<!--	{{ article.content }} -->
 	</div>
 
 	<div class="listofblogs">
