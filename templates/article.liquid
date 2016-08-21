@@ -11,23 +11,38 @@
 
 <div id="articlecontent">
 	<div class="article-images">
-	  <!-- Look for images -->
+	  <!-- Look for images
 		{% if article.content contains "<img" %}
 	    {% assign artimgs = article.content | split: 'src="' %}
 	    <!--{% assign artimgs = artimgs[1] | split: '"' | first | replace: '//cdn', 'http://cdn'; | replace: 'http:http://';, 'http://'; | remove: 'https:' %}-->
 		{% endif %}
-		<!-- images  -->
+		<!-- images
 		<ul>
 
-		<!--	{% for artimg in artimgs %}-->
+		<!--	{% for artimg in artimgs %}
 		<li>
 			{{ artimgs }}
-			<!--<img src="{{ artimg }}">-->
+			<!--<img src="{{ artimg }}"
 		</li>
-	<!--	{% endfor %} -->
+	<!--	{% endfor %}
+
+		</ul>-->
+
+		<ul>
+		     {% if article.content contains "<img" %}
+		          {% assign content-src = article.content | split: 'src="' %}
+		          {% assign content-size = content-src.size | minus:1 %}
+		          {% for i in (1..content-size) %}
+		              {% assign src = content-src[i] | split: '"' | first | replace: '//cdn', 'http://cdn';;;; | replace: 'http:http://';;;;, 'http://';;;; | remove: 'https:' %}
+		<li>
+		<img src="{{src}}" />
+		</li>
+		      {% endfor %}
+
+		     {% else %}
+		     {% endif %}
 
 		</ul>
-
 	</div>
 
 	<div class="article">
