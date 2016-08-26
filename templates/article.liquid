@@ -31,12 +31,12 @@
 			{{ article.content }}
 
 		{% if blog.next-article != false %}
-			<a href="{{ blog.next-article }}"> <h3> Next article </h3></a>
+			<div class="article-btn"><a href="{{ blog.next-article }}"><h3>Next Article</h3></a></div>
 			{{ blog.next-article }}
 		{% endif %}
 
 		{% if blog.previous-article != false %}
-			<a href="{{ blog.previous-article }}"> <h3> Previous article </h3></a>
+			<div class="article-btn"><a href="{{ blog.previous-article }}"><h3>Previous Article</h3></a></div>
 		{% endif %}
 
 	</div>
