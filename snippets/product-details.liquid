@@ -1,55 +1,37 @@
-<!-- Product Discrpition -->
-{% if product.description != "" %}
-	<div class="description" itemprop="description">
-		{{ product.description }}
-	</div>
 
-{% else %}
-		
-	{% if product.metafields.c_f.overview-detail1 %}
-		<ul class="navproduct">
-			{% if product.metafields.c_f.overview-detail1 %}
-				<!--<li><a href="#overview">Overview</a></li>-->				
-			{% endif %}
-			
-			
-			<li>
-			 
-			</li>
-			
-		</ul>
+<div class="description details-tab" itemprop="description">
+	{{ product.description }}
+</div>
+
+<div class="details-area">
+	{%if product.metafields.c_f.overview-detail1 %}
+		<div>
+			<ul >
+				{%if product.metafields.c_f.overview-detail1%}
+					<li>{{product.metafields.c_f.overview-detail1}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail2%}
+					<li>{{product.metafields.c_f.overview-detail2}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail3%}
+					<li>{{product.metafields.c_f.overview-detail3}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail4%}
+					<li>{{product.metafields.c_f.overview-detail4}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail5%}
+					<li>{{product.metafields.c_f.overview-detail5}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail6%}
+					<li>{{product.metafields.c_f.overview-detail6}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail7%}
+					<li>{{product.metafields.c_f.overview-detail7}}</li>
+				{%endif%}
+				{%if product.metafields.c_f.overview-detail8%}
+					<li>{{product.metafields.c_f.overview-detail7}}</li>
+				{%endif%}
+			</ul>
+		</div>
 	{% endif %}
-
-	<div class="details-area">
-		{%if product.metafields.c_f.overview-detail1 %}
-			<div>
-				<ul >
-					{%if product.metafields.c_f.overview-detail1%}
-						<li>{{product.metafields.c_f.overview-detail1}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail2%}
-						<li>{{product.metafields.c_f.overview-detail2}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail3%}
-						<li>{{product.metafields.c_f.overview-detail3}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail4%}
-						<li>{{product.metafields.c_f.overview-detail4}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail5%}
-						<li>{{product.metafields.c_f.overview-detail5}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail6%}
-						<li>{{product.metafields.c_f.overview-detail6}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail7%}
-						<li>{{product.metafields.c_f.overview-detail7}}</li>
-					{%endif%}
-					{%if product.metafields.c_f.overview-detail8%}
-						<li>{{product.metafields.c_f.overview-detail7}}</li>
-					{%endif%}
-				</ul>
-			</div>
-		{% endif %}
-	</div>
-{% endif %}
+</div>

@@ -157,8 +157,7 @@
 		<!-- <ul class="tab-links"> -->
 			<ul class="tab-links">
 				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
-				<!-- each one of these li's are our titles -->
-			<li class="active links"><a href="#details">Details</a></li>
+					<li class="active links"><a href="#details">Details</a></li>
 				{% endif %}
 				<li class="links"><a href="#sizing">Sizing</a></li>
 				<li class="links"><a href="#shipping">Shipping</a></li>
@@ -168,29 +167,25 @@
 
 			<div class="tab-content">
 				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
-				<!-- <div id="details" class="tab"> -->
-			        <p id="details" class="tab">
-			            {% include 'product-details' %}
-			        </p>
-			    <!-- </div> -->
-		 		{% endif %}
-		 		<!-- NOTE TO SELF: pull ifstatement outside of div before publishing theme -->
+					<!-- <div id="details" class="tab"> -->
+				        <p id="details" class="tab">
+				            {% include 'product-details' %}
+				        </p>
+				    <!-- </div> -->
+			 		{% endif %}
+
 		        <div id="sizing" class="tab tab-sizing">
 		        	<p>Sizing</p>
-							{% if product.details contains <table %}
-						    {% assign sizechart = product.details %}
+
+							{% if product.description contains "<table" %}
+						    {% assign sizechart = product.description | split: '' %}
+								{{ sizechart }}
+
+							{% elsif %}
+								{{ pages["gen-sizing"].content }}
 
 							{% endif %}
 
-							{{ product.description | json }}
-							<!--
-						{{ size-chart-string }}
-		            {% if product.metafields.c_f.sizes %}
-		            	<p>
-		            		{{ product.metafields.c_f.sizes }}
-		            	</p>
-		            {% endif %}
-							-->ro
 		        </div>
 
 		        <div id="shipping" class="tab tab-sizing">

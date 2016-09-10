@@ -1591,9 +1591,12 @@ h4{
     /*----- Content of Tabs -----*/
     .tab-content {
         padding:0px 15px;
-        // border-radius:3px;
-        // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-        // background:#fff;
+
+				.details-tab {
+					table {
+						display: none !important;
+					}
+				}
     }
 
         .tab {
@@ -1614,6 +1617,7 @@ h4{
 
         #details {
         	// background-color:cadetblue;
+
         }
 
 		.hide {
