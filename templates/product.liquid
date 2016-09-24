@@ -7,34 +7,9 @@
 	{% endif %}
 {% endfor %}
 
-{% capture bohdansizing %}{{product.vendor|handleize}}-{{product.type|handleize}}{% endcapture %}
 {% capture shipping %}shipping-policy-canada{% endcapture %}
 {% capture shippingNA %}north-america{% endcapture %}
 
-
-{% if pages[bohdansizing].content != "" %}
-<div class="sizing">
-	<div>
-		{% if product.type == "Denim" or product.type == "Pants" or product.type == "Pants & Denim" %}
-			<img src="{{ 'pants-icon.jpg' | asset_url }}">
-		{% elsif product.type == "Shirts" %}
-			<img src="{{ 'shirt-icon.jpg' | asset_url }}">
-		{% elsif product.type == "T-Shirts" %}
-			<img src="{{ 't-shirt-icon.jpg' | asset_url }}">
-		{% elsif product.type == "Shorts & Swim" or product.type == "Shorts" %}
-			<img src="{{ 'shorts-icon.jpg' | asset_url }}">
-		{% elsif product.type == "Sweatshirts" or product.type == "Sweaters" %}
-			<img src="{{ 'sweatshirt-icon.jpg' | asset_url }}">
-		{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
-			<img src="{{ 'jacket-icon.jpg' | asset_url }}">
-		{% endif %}
-
-		{{ pages[bohdansizing].content }}
-
-		<div class="mini"><a href="#">X</a></div>
-	</div>
-</div>
-{% endif %}
 
 <div class="mx-width-breadcrumbs">
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span>
@@ -163,27 +138,35 @@
 
 			<div class="tab-content">
 				{% if product.description != ""  or product.metafields.c_f.overview-detail1 != "" %}
-				<!-- <div id="details" class="tab"> -->
 			        <p id="details" class="tab">
 			            {% include 'product-details' %}
 			        </p>
-			    <!-- </div> -->
 		 		{% endif %}
 
 		        <div id="sizing" class="tab tab-sizing">
-
 							{% if product.description contains "<table" %}
-						    {% assign sizechart = product.description | split: '' %}
-								{{ sizechart }}
-
-							{% elsif %}
-`								{{ pages["gen-sizing"].content }}
-`
+						   {{ product.description }}
 							{% endif %}
 
+							<!--<div>
+								<img src="{{ 'pants-icon.jpg' | asset_url }}">
+								{% if product.type == "Denim" or product.type == "Pants" or product.type == "Pants & Denim" %}
+									<img src="{{ 'pants-icon.jpg' | asset_url }}">
+								{% elsif product.type == "Shirts" %}
+									<img src="{{ 'shirt-icon.jpg' | asset_url }}">
+								{% elsif product.type == "T-Shirts" %}
+									<img src="{{ 't-shirt-icon.jpg' | asset_url }}">
+								{% elsif product.type == "Shorts & Swim" or product.type == "Shorts" %}
+									<img src="{{ 'shorts-icon.jpg' | asset_url }}">
+								{% elsif product.type == "Sweatshirts" or product.type == "Sweaters" %}
+									<img src="{{ 'sweatshirt-icon.jpg' | asset_url }}">
+								{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
+									<img src="{{ 'jacket-icon.jpg' | asset_url }}">
+								{% endif %}
+							</div>-->
 		        </div>
 
-		        <div id="shipping" class="tab tab-sizing">
+		        <div id="shipping" class="tab tab-shipping">
 		            {% if product.price > 60000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
