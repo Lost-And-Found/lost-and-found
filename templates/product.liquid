@@ -103,7 +103,7 @@
 			</div>
 			{% if nocart == true %}
 				<div class="nocart">
-					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
+					Phone or email Order Only - Please contact <a href="mailto:info@shoplostfound.com">info@shoplostfound.com</a> / 647.348.2810
 				</div>
 			{% elsif variant.available == true %}
 				<input type="submit" name="add" {% if variant.available == true %}id="add"{% endif %} value="Add to Cart" class="button">
@@ -143,9 +143,9 @@
 			        </p>
 		 		{% endif %}
 
-		        <div id="sizing" class="tab tab-sizing">
+		        <div id="sizing" class="tab ">
 							{% if product.description contains "<table" %}
-						   {{ product.description }}
+						   <div class="tab-sizing">{{ product.description }}</div>
 							 {% else %}
 							 {{ pages["gen-sizing"].content }}
 							{% endif %}
