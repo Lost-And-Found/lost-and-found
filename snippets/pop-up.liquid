@@ -1,11 +1,8 @@
 <div class="module module--visible">
-	<!-- below is the exit button -->
-	<div class="button button--exit">
-		<input type="checkbox" id="nav-toggle">
-		<label for="nav-toggle">
-		    <span>Exit</span>
-		</label>
-	</div>
+	<input type="checkbox" id="nav-toggle">
+	<label for="nav-toggle">
+		   <span>Exit</span>
+	</label>
 
 	<span class="block">
 		<h2 class="title">You know? Dealing with soft targets</h2>
@@ -14,7 +11,7 @@
 		<div class="form--contact">
 			<label for="contact_form_email">Email <span class="red">*</span></label>
 			<form id="module--form">
-			<input type="text" id="contact_form_email" name="contact[email]" required pattern="[^ @]*@[^ @]*" value="{{ contact.fields.email }}"/>
+			<input type="text" placeholder="email" id="contact_form_email" name="contact[email]" required pattern="[^ @]*@[^ @]*" value="{{ contact.fields.email }}"/>
 			<input type='submit' class="submit action_button" value="Submit" />
 			</form>
 		</div>
