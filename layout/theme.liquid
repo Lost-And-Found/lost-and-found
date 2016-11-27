@@ -72,13 +72,14 @@
 
 
 <div id="wrapper">
-
-
-	<div id="topbar">
+	
+	{% include 'header-nav' %}
+<!-- 	<div id="topbar">
 		<div id="lefttopbar">
 			{% include 'currency-picker' %}
 			Danger coding
 		</div>
+		
 		<div id="righttopbar">
 			<a href="/cart">cart ({{ cart.item_count }})</a>
 			<a href="/cart">CheckOut</a>
@@ -89,7 +90,7 @@
 			</form>
 		</div>
 	</div>
-	{% include "mini-nav" %}
+	{% include "mini-nav" %} -->
 
 	<!--	{% include "cookie" %} -->
 
