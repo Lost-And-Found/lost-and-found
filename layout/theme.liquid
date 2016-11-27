@@ -3,13 +3,13 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->  
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta name="google-site-verification" content="2x9LBh7uqpPiIToJtT6fSWSHrqlQPRoWSUtOw1N2p0g"/>
-	
+
 	<meta name="HandheldFriendly" content="True">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
 	<link rel="canonical" href="{{ canonical_url }}" />
@@ -55,7 +55,7 @@
 
 
 	<link rel="canonical" href="{{ canonical_url }}" />
-	<meta name="viewport" content="width=device-width" />  
+	<meta name="viewport" content="width=device-width" />
 	{{ content_for_header }}
 
 	{% if template contains 'product' %}
@@ -63,7 +63,7 @@
 	{% endif %}
 	{{ 'style.min.css' | asset_url | stylesheet_tag }}
 
-	{{ 'modernizer.min.js'| asset_url | script_tag }}	
+	{{ 'modernizer.min.js'| asset_url | script_tag }}
 </head>
 <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
@@ -82,11 +82,11 @@
 				<input type="hidden" name="type" value="product" />
 				<input type="text" name="q" class="search_box" placeholder="SEARCH" value="{{ search.terms }}" />
 				<input type="submit" class="submit" value="»">
-			</form>			
+			</form>
 		</div>
-	</div>	
+	</div>
 	{% include "mini-nav" %}
-	
+
 	<!--	{% include "cookie" %} -->
 
 	{{ content_for_layout }}
@@ -99,7 +99,7 @@
 				<a href="http://shoplostfound.com/pages/contact">Contact</a>
 				<a href="http://shoplostfound.com/pages/shipping" class="dashafter">Shipping policy</a>
 				<a target="_blank" href="http://workingtitleshop.com">Working Title</a>
-			</div><div>	
+			</div><div>
 				<span class="block">Join our Newsletter</span>
 				<form accept-charset="UTF-8" action="/contact" class="contact-form dashafter" method="post"><input name="form_type" type="hidden" value="customer"><input name="utf8" type="hidden" value="✓">
 					<input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter">
@@ -107,7 +107,7 @@
 					<input type="hidden" id="newsletter-last-name" name="contact[last_name]" value="Newsletter">
 					<input type="email" id="contact_email" name="contact[email]" required="" pattern="[^ @]*@[^ @]*" placeholder="Email"><input type="submit" class="submit" value="»">
 				</form>
-				
+
 				<a href="https://twitter.com/shoplostfound" title="Lost &amp; Found on Twitter" class="social_link block" rel="me" target="_blank"><img src="{{ 'sm-twitter.png' | asset_url }}"></a>
 				<a href="http://facebook.com/shoplostfound" title="Lost &amp; Found on Facebook" class="social_link block smallbuffer" rel="me" target="_blank"><img src="{{ 'sm-fb.png' | asset_url }}"></a>
 				<a href="http://shoplostfound.tumblr.com/" title="Lost &amp; Found on Tumblr" class="social_link block smallbuffer" rel="me" target="_blank"><img src="{{ 'sm-tum.png' | asset_url }}"></a>
@@ -123,9 +123,9 @@
 				</tbody></table>
 			</div>
 		</div>
-	</div> 
+	</div>
 
-</div>	
+</div>
 	{{ 'main.min.js'  | asset_url | script_tag }}
 
 
