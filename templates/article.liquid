@@ -16,11 +16,12 @@
 		          {% assign content-size = content-src.size | minus:1 %}
 		          {% for i in (1..content-size) %}
 		              {% assign src = content-src[i] | split: '"' | first | replace: '//cdn', 'http://cdn';;;; | replace: 'http:http://';;;;, 'http://';;;; | remove: 'https:' %}
+
+
 		<li>
 		<img src="{{src}}" />
 		</li>
-		     {% endfor %}
-		     {% else %}
+				{% endfor %}
 		     {% endif %}
 		</ul>
 	</div>
