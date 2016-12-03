@@ -35,7 +35,6 @@ body {
 }
 
 nav {
-	background-color:lightseagreen;
 	flex:(0 1 50%);
 	padding-right:2%;
 }
@@ -43,6 +42,11 @@ nav {
 .menu__items {
 	display:flex;
 	align-items:center;
+	li {
+		list-style-type: none;
+		display:inline;
+		background-color:pink;
+	}
 }
 
 .utility__nav {
@@ -211,8 +215,12 @@ nav {
 
 // starting work on the nav dropdown
 .top_level {
-	background-color:pink;
+	// background-color:pink;
 	width:50px;
+}
+
+.selected {
+	border-bottom: 5px solid white;
 }
 
 #navbrandlist, #navcollectionlist {

@@ -8,7 +8,7 @@
 			{% for link in linklists[settings.main_linklist].links %} -->
 				<li class=" top_level {% if link.active %}selected{% endif %} {% if has_drop_down %}hassublinks{% endif %}">
 					{% if link.title == "Brands" %}
-						<a href="#" id="brandslink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a>
+						<a href="#" id="brandslink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}<span class="bellowarrow"><span></span></span></a><
 						<div id="navbrandlist">
 							{% include 'ourbrands' %}
 							<div class="exit">X</div>
