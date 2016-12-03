@@ -12,19 +12,19 @@
 {% if search.performed %}
 {% paginate search.results by 42 %}
 
-{% if search.results_count == 0 %}  
-<p>Your search for "{{ search.terms }}" did not yield any results.</p>              
+{% if search.results_count == 0 %}
+<p>Your search for "{{ search.terms }}" did not yield any results.</p>
 {% else %}
 
 {% assign products = search.results %}
 {% include 'product-loop' %}
-{% endif %}    
+{% endif %}
 {% if paginate.pages > 1 %}
 {{ paginate | default_pagination }}
 {% endif %}
-{% endpaginate %}    
-{% endif %}  
+{% endpaginate %}
+{% endif %}
 
-<h4 id="brandlisttitle">Our Brands</h4>
+<!-- <h4 id="brandlisttitle">Our Brands</h4>
 
-{% include 'ourbrands' %}
+{% include 'ourbrands' %} -->
