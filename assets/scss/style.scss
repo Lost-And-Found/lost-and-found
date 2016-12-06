@@ -1,3 +1,4 @@
+@import "mixins";
 @import "settings";
 @import"module";
 @import"header";
@@ -386,15 +387,15 @@ h4{
 			// column-count: 2;
 		}
 	}
-	#collections{
-		li:first-child{
-			font-weight: bolder;
-			&:after{
-				@extend .dash;
-				margin: 12px 0;
-			}
-		}
-	}
+	// #collections{
+	// 	li:first-child{
+	// 		font-weight: bolder;
+	// 		&:after{
+	// 			@extend .dash;
+	// 			margin: 12px 0;
+	// 		}
+	// 	}
+	// }
 
 	.paginate{
 		max-width: $max-width;
