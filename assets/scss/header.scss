@@ -1,5 +1,5 @@
 body {
-	transition: padding-top 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 .small_heading {
@@ -19,7 +19,7 @@ body {
 	top:0;
 	position:fixed;
 	z-index:999;
-	transition: height 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 .header_small {
@@ -39,7 +39,7 @@ body {
 	top:0;
 	left:50%;
 	transform: translateX(-50%);
-	transition: height 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	#nav li:hover {
 		#navcollectionlist, #navbrandlist {
 			position:fixed;
@@ -51,6 +51,7 @@ body {
 			margin:0;
 			max-height:40vh;
 			padding-top:20px;
+			transition: all 0.5s ease-in-out;
 			#collections, #brandlist {
 				background-color:transparent;
 				box-shadow: none;
@@ -99,6 +100,9 @@ body {
 				}
 			}
 		}
+		.small_dropdown {
+			top:75px !important;
+		}
 		#navbrandlist {
 			max-height:75vh;
 			#brandlist {
@@ -124,8 +128,7 @@ body {
 	flex:(0 0 15%);
 	.logo {
 		display:block;
-		height:70px;
-		padding-top:30px;
+		height:100px;
 		margin:0 auto;
 		max-width:200px;
 		width:80%;
@@ -134,10 +137,11 @@ body {
 		background-position:center center;
 		background-repeat:no-repeat;
 		background-size:contain;
-		transition: padding-top 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 	}
 	.logo_small {
-		padding-top:0;
+		height:70px;
+		transition: all 0.5s ease-in-out;
 	}
 	@include breakpoint(960px) {
 		display:none;
@@ -395,7 +399,6 @@ body > li {
 
 // starting work on the nav dropdown
 .top_level {
-	// background-color:pink;
 	width:50px;
 }
 

@@ -1,21 +1,12 @@
 @import "settings";
 
-
 @media (max-width: 961px) {
-
-
 /* Nav */
-	
-
 	#topbar{
 		#lefttopbar,#righttopbar{
 			display: block;
 			position: static;
 		}
-
-		/* #lefttopbar{
-			display: none;
-		} */
 	}
 	#mobile-mini-logo {
 		display: block !important;
@@ -91,7 +82,6 @@
 				span {
 					margin: 5px 0 0 0;
 					position: absolute;
-				
 					transition: all .2s linear;
 					-o-transition: all .2s linear;
 					-moz-transition: all .2s linear;

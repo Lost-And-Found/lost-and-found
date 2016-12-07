@@ -1,14 +1,15 @@
 <div class="wrapper__nav">
 	<div class="nav--dark">
 		<div class="logo__container">
-			<a href="/" class="logo"> </a>
+			<a href="/" class="logo"></a>
 		</div>
 		<div id="nav" class="">
-			<div id="toggleicon">
+<!-- 		<div id="toggleicon">
 				<span id="toggleicon-top"></span>
 				<span id="toggleicon-middle"></span>
 				<span id="toggleicon-bottom"></span>
-			</div>
+			</div> -->
+			{% include 'mobile-nav' %}
 			<div class="primary_nav">
 			<ul>
 			{% for link in linklists[settings.main_linklist].links %}
