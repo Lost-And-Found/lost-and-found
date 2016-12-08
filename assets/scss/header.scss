@@ -63,7 +63,7 @@ body {
 			}
 			li {
 				width:33.33%;
-				padding:0;
+				padding:0 10 0 0;
 				// why is there a blank category?
 				&:first-child {
 					display:none;
@@ -115,7 +115,7 @@ body {
 						font-size:12px;
 					}
 				}
-			}	
+			}
 		}
 	}
 }
@@ -188,7 +188,7 @@ nav {
 				display:flex;
 				align-items:center;
 				&:hover > a {
-					border-bottom:1.5px solid white;	
+					border-bottom:1.5px solid white;
 					color:#fff;
 				}
 			}

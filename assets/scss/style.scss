@@ -1398,6 +1398,9 @@ h4{
 		}
 
 		.article{
+			position: fixed;
+			height: 100%;
+			overflow: scroll;
 			width: 39%;
 			margin: 0 5%;
 			vertical-align: top;
@@ -1412,15 +1415,21 @@ h4{
 				text-align: center;
 				letter-spacing: 0.04em;
 			}
-
-			.article-btn{
-				width: 189px;
+			.article-nav {
 				margin: 30px 0;
-				text-align: center;
-				height: 60px;
-				border: 1px solid #fff;
-				display: inline-block;
-				font-family: $monospace;
+
+				.article-btn{
+					width: 49%;
+					text-align: center;
+					height: 60px;
+					background-color: #333333;
+					display: inline-block;
+					font-family: $monospace;
+
+					a {
+						color: #fff;
+					}
+				}
 			}
 
 			img {
