@@ -1,15 +1,10 @@
 <div class="wrapper__nav">
 	<div class="nav--dark">
+		{% include 'mobile-nav' %}
 		<div class="logo__container">
 			<a href="/" class="logo"></a>
 		</div>
 		<div id="nav" class="">
-<!-- 		<div id="toggleicon">
-				<span id="toggleicon-top"></span>
-				<span id="toggleicon-middle"></span>
-				<span id="toggleicon-bottom"></span>
-			</div> -->
-			{% include 'mobile-nav' %}
 			<div class="primary_nav">
 			<ul>
 			{% for link in linklists[settings.main_linklist].links %}
@@ -25,10 +20,13 @@
 					{% elsif  link.title == "Categories"%}
 						<a href="#" id="categorylink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
 						<div id="navcollectionlist">
-							<a href="/collections/all" title="Browse All" class="shopall block">Shop All</a>
-							<a href="/collections/the-vault" title="Sale" class="shopall block">The Vault</a>
+							<div class="all">
+								<a href="/collections/all" title="Browse All" class="shopall block">Shop All</a>
+								<a href="/collections/the-vault" title="Sale" class="shopall block">The Vault</a>
+							</div>
 							<ul id="collections">
-								{% for product_type in shop.types %}<li class="collectionlink">
+								{% for product_type in shop.types %}
+								<li class="collectionlink">
 										{{ product_type | link_to_type }}
 									</li>{% endfor %}
 							</ul>

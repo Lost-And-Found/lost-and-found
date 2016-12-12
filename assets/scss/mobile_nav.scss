@@ -6,7 +6,7 @@ label[for=nav-input] {
 }
 
 label[for=nav-input] {
-	@include breakpoint(1085px) {
+	@include breakpoint(1000px) {
 		display:block;
 	}
 	position: fixed;
@@ -17,7 +17,7 @@ label[for=nav-input] {
 	background-color: none;
 	border: 1px solid $bk-dark-color;
 	padding:14px 10px 6px 10px;
-	z-index: 9999999;
+	z-index: 9999999999;
 	transform: translateY(-50%);
 	transition: all .2s linear;
 	-o-transition: all .2s linear;
@@ -48,35 +48,47 @@ label[for=nav-input] {
 		height:0;
 		padding-top:2px;
 		top:13px;
-		left:50%;
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
 		z-index: 9999999;
-		transform-origin:-50%;
+		// transform-origin:-50%;
 	}
 	&:after {
 		background-color: $bk-dark-color;
 		bottom:13px;
-		left:50%;
-		transform: translateX(-50%);
+		// transform: translateX(-50%);
 		content:"";
 		position:absolute;
 		width:20px;
 		height:0;
 		padding-top:2px;
 		z-index: 9999999;
-		transform-origin:-50%;
 	}
 }
 
+
 #nav-input:checked ~ label[for=nav-input] {
 	&:before{
-		// transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		transform-origin:50% 50%;
+		top:20px;
 	}
 	&:after {
-		transform-origin:50%;
+		transform-origin:50% 50%;
 		transform: rotate(45deg) translateX(0%);
+		bottom:18px;
 	}
 	span {
 		opacity:0;
 	}
+}
+
+#nav-input:checked ~ #nav {
+	.primary_nav {
+		left:-1px;
+		pointer-events:all;
+	}
+}
+
+#nav-input:checked ~ .logo__container {
+	left:35px;
 }

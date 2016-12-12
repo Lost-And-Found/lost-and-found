@@ -416,6 +416,8 @@ h4{
 	}
 
 	#footer{
+		position:relative;
+		z-index:99;
 		@extend .linetop;
 		background-color: #fff;
 		padding: 60px;
@@ -1402,7 +1404,7 @@ h4{
 			height: 100%;
 			overflow: scroll;
 			width: 39%;
-			margin: 0 5%;
+			padding:0 5%;
 			vertical-align: top;
 			display: inline-block;
 			font-family: $sans-serif !important;
@@ -1417,6 +1419,7 @@ h4{
 			}
 			.article-nav {
 				margin: 30px 0;
+				padding-bottom:75px;
 
 				.article-btn{
 					width: 49%;
@@ -1428,6 +1431,8 @@ h4{
 
 					a {
 						color: #fff;
+						display:block;
+						padding: 18px 0;
 					}
 				}
 			}
