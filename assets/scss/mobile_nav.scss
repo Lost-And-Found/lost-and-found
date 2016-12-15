@@ -48,14 +48,11 @@ label[for=nav-input] {
 		height:0;
 		padding-top:2px;
 		top:13px;
-		// transform: translateX(-50%);
 		z-index: 9999999;
-		// transform-origin:-50%;
 	}
 	&:after {
 		background-color: $bk-dark-color;
 		bottom:13px;
-		// transform: translateX(-50%);
 		content:"";
 		position:absolute;
 		width:20px;
