@@ -6,6 +6,64 @@ body {
 	padding-top:50px !important;
 }
 
+option, select {
+	appearance: none !important;
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;			
+}
+
+#nav {
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	height:100%;
+	.primary_nav {
+		padding:0;
+		margin:0;
+		height:100%;
+		display:flex;
+		align-items:center;
+		& > ul {
+			height:100%;
+			padding:0;
+			margin:0;
+			text-align:left;
+			display:flex;
+			align-content:center;
+			li {
+				// height:100%;
+			}
+			li > a {
+				padding-bottom:10px;
+				border-bottom:1.5px solid transparent;
+				&:hover  {
+					border-bottom:1.5px solid white;
+					color:#fff;
+				}
+			}
+			.top_link {
+				display:flex;
+				align-items:center;
+				&:hover > a {
+					border-bottom:1.5px solid white;
+					color:#fff;
+				}
+			}
+			.top_link > a {
+				font-size:16px;
+				text-transform:capitalize;
+				font-family: Courier;
+				font-weight: normal;
+				font-style: normal;
+				font-stretch: normal;
+				height:20px;
+				padding-top:10px;
+				@include breakpoint(1350px) {
+					font-size:12px;
+				}
+			}
+		}
+	}
+}
 
 .wrapper__nav {
 	width:100%;
@@ -29,7 +87,7 @@ body {
 	background-color:#333333;
 	color:#fff;
 	font-size:16px;
-	display:flex;
+	@include flexbox();
 	position:fixed;
 	z-index:99999;
 	top:0;
@@ -44,22 +102,27 @@ body {
 			top:100px;
 			background-color:white;
 			margin:0;
-			max-height:40vh;
+			// max-height:40vh;
+			height:auto;
 			padding-top:20px;
 			transition: all 0.5s ease-in-out;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 			#collections, #brandlist {
 				background-color:transparent;
 				box-shadow: none;
-				display:flex;
+				@include flexbox();
+				-webkit-box-orient:vertical;
+				// -webkit-box-direction:normal;
+				-webkit-flex-direction:column;
+				-ms-flex-direction:column;
 				flex-direction:column;
+				-webkit-flex-wrap:wrap;
+				-ms-flex-wrap:wrap;
 				flex-wrap:wrap;
-				max-height:30vh;
+				height:35vh;
 				padding: 20px;
 			}
 			li {
-				width:33.33%;
-				// padding:0 10 0 0;
 				// why is there a blank category?
 				&:first-child {
 					display:none;
@@ -78,7 +141,7 @@ body {
 
 			.all {
 				max-width: 1050px;
-   				width: 80%;
+   				width:80%;
    				padding:0 20px;
 				margin:0 auto;
 			}
@@ -90,7 +153,8 @@ body {
 			}
 
 			.allbrands {
-				padding-left:20px;
+				text-align:left;
+				padding-left:10px;
 			}
 
 			a {
@@ -109,17 +173,17 @@ body {
 			top:75px !important;
 		}
 		#navbrandlist {
-			max-height:90vh;
+			height:85vh;
 			#brandlist {
-				max-height:80vh;
+				height:80vh;
 				position:relative;
 				li {
-					padding-left:20px;
 					width:20%;
 					a {
 						font-size:12px;
 					}
 				}
+
 			}
 		}
 	}
@@ -156,59 +220,6 @@ body {
 nav {
 	flex:(0 1 55%);
 	padding-right:2%;
-}
-
-#nav {
-	padding-top:0 !important;
-	padding-bottom:0 !important;
-	height:100%;
-	.primary_nav {
-		padding:0;
-		margin:0;
-		height:100%;
-		display:flex;
-		align-items:center;
-		ul {
-			height:100%;
-			padding:0;
-			margin:0;
-			text-align:left;
-			display:flex;
-			align-content:center;
-			li {
-				height:100%;
-			}
-			li > a {
-				padding-bottom:10px;
-				border-bottom:1.5px solid transparent;
-				&:hover  {
-					border-bottom:1.5px solid white;
-					color:#fff;
-				}
-			}
-			.top_link {
-				display:flex;
-				align-items:center;
-				&:hover > a {
-					border-bottom:1.5px solid white;
-					color:#fff;
-				}
-			}
-			.top_link > a {
-				font-size:16px;
-				text-transform:capitalize;
-				font-family: Courier;
-				font-weight: normal;
-				font-style: normal;
-				font-stretch: normal;
-				height:20px;
-				padding-top:10px;
-				@include breakpoint(1350px) {
-					font-size:12px;
-				}
-			}
-		}
-	}
 }
 
 //catogory dropdown stuff
@@ -392,9 +403,11 @@ body > li {
 
 	@include breakpoint(1100px) {
 		height:35px;
+		font-size:12px;
 		.submit {
+			outline: none !important;
 			width:100px;
-			padding:0 10px;
+			font-size:12px;
 		}
 		.submit:hover ~ .search_box {
 			width:70px;
@@ -405,19 +418,37 @@ body > li {
 			font-size:12px;
 		}
 		.search_box:focus {
+			outline: none !important;
 			width:70px;
 			font-size:12px;
 		}
 
 		.search_box:active {
+			outline: none !important;
 			width:70px;
+			font-size:12px;
+		}
+		.search_box {
+			font-size:12px;
+			&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				font-size:12px;
+			}
+		}
+		.search_box::-moz-placeholder { /* Firefox 19+ */
+			font-size:12px;
+		}
+
+		.search_box:-ms-input-placeholder { /* IE 10+ */
+			font-size:12px;
+		}
+
+		.search_box::placeholder { /* IE 10+ */
 			font-size:12px;
 		}
 	}
 
 	@include breakpoint(1000px) {
 		width:100px;
-		padding:0 10px;
 		.submit:hover ~ .search_box {
 			width:100px;
 			padding:0 10px;
@@ -464,10 +495,6 @@ body > li {
 // starting work on the nav dropdown
 .top_level {
 	width:50px;
-}
-
-.selected {
-	border-bottom: 2px solid white;
 }
 
 @include breakpoint(1000px) {

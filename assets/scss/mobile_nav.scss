@@ -88,4 +88,5 @@ label[for=nav-input] {
 
 #nav-input:checked ~ .logo__container {
 	left:35px;
+	z-index:99999999;
 }
