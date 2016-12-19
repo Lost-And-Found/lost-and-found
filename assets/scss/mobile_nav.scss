@@ -1,0 +1,92 @@
+#nav-input {
+	display:none;
+}
+label[for=nav-input] {
+	display:none;
+}
+
+label[for=nav-input] {
+	@include breakpoint(1000px) {
+		display:block;
+	}
+	position: fixed;
+	left: 1em;
+	top: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: none;
+	border: 1px solid $bk-dark-color;
+	padding:14px 10px 6px 10px;
+	z-index: 9999999999;
+	transform: translateY(-50%);
+	transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;	
+	span {
+		background-color: $bk-dark-color;
+		opacity:1;
+		position:absolute;
+		width:20px;
+		height:0;
+		padding-top:2px;
+		overflow:hidden;
+		z-index: 9999999;
+		left:50%;
+		top:50%;
+		transform: translate(-50%, -50%);
+		transition: all .2s linear;
+		-o-transition: all .2s linear;
+		-moz-transition: all .2s linear;
+		-webkit-transition: all .2s linear;	
+	}
+	&:before {
+		background-color: $bk-dark-color;
+		content:"";
+		position:absolute;
+		width:20px;
+		height:0;
+		padding-top:2px;
+		top:13px;
+		z-index: 9999999;
+	}
+	&:after {
+		background-color: $bk-dark-color;
+		bottom:13px;
+		content:"";
+		position:absolute;
+		width:20px;
+		height:0;
+		padding-top:2px;
+		z-index: 9999999;
+	}
+}
+
+
+#nav-input:checked ~ label[for=nav-input] {
+	&:before{
+		transform: rotate(-45deg);
+		transform-origin:50% 50%;
+		top:20px;
+	}
+	&:after {
+		transform-origin:50% 50%;
+		transform: rotate(45deg) translateX(0%);
+		bottom:18px;
+	}
+	span {
+		opacity:0;
+	}
+}
+
+#nav-input:checked ~ #nav {
+	.primary_nav {
+		left:-1px;
+		pointer-events:all;
+	}
+}
+
+#nav-input:checked ~ .logo__container {
+	left:35px;
+	z-index:99999999;
+}

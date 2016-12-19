@@ -28,6 +28,9 @@
 		<meta name="description" content="{{ page_description }}" />
 	{% endif %}
 
+	{% if template contains 'article' %}
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	{% endif %}
 
 	{% if template contains 'product' %}
 		<meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
@@ -65,29 +68,11 @@
 
 	{{ 'modernizer.min.js'| asset_url | script_tag }}
 </head>
-<body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+<body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" style="padding-top:75px;" >
 
 
 <div id="wrapper">
-
-
-	<div id="topbar">
-		<div id="lefttopbar">
-			{% include 'currency-picker' %}
-		</div>
-		<div id="righttopbar">
-			<a href="/cart">cart ({{ cart.item_count }})</a>
-			<a href="/cart">CheckOut</a>
-			<form class="search" action="/search">
-				<input type="hidden" name="type" value="product" />
-				<input type="text" name="q" class="search_box" placeholder="SEARCH" value="{{ search.terms }}" />
-				<input type="submit" class="submit" value="»">
-			</form>
-		</div>
-	</div>
-	{% include "mini-nav" %}
-
-	<!--	{% include "cookie" %} -->
+	{% include 'header-nav' %}
 
 	{{ content_for_layout }}
 

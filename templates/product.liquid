@@ -10,6 +10,29 @@
 {% capture shipping %}shipping-policy-canada{% endcapture %}
 {% capture shippingNA %}north-america{% endcapture %}
 
+{% if pages[bohdansizing].content != "" %}
+<div class="sizing">
+	<div>
+		{% if product.type == "Denim" or product.type == "Pants" or product.type == "Pants & Denim" %}
+			<img src="{{ 'pants-icon.jpg' | asset_url }}">
+		{% elsif product.type == "Shirts" %}
+			<img src="{{ 'shirt-icon.jpg' | asset_url }}">
+		{% elsif product.type == "T-Shirts" %}
+			<img src="{{ 't-shirt-icon.jpg' | asset_url }}">
+		{% elsif product.type == "Shorts & Swim" or product.type == "Shorts" %}
+			<img src="{{ 'shorts-icon.jpg' | asset_url }}">
+		{% elsif product.type == "Sweatshirts" or product.type == "Sweaters" %}
+			<img src="{{ 'sweatshirt-icon.jpg' | asset_url }}">
+		{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
+			<img src="{{ 'jacket-icon.jpg' | asset_url }}">
+		{% endif %}
+
+		{{ pages[bohdansizing].content }}
+
+		<div class="mini"><a href="#">X</a></div>
+	</div>
+</div>
+{% endif %}
 
 <div class="mx-width-breadcrumbs">
 	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span>
@@ -51,9 +74,6 @@
 		<h2 class="dashafter title">
 			{{ product.title }}
 		</h2>
-		<!-- {{product.vendor}}-{{product.type}} -->
-		<!-- {{ 'dropdown-arrow.png' | asset_url }} -->
-
 
 		<div class="spaceafter price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 			<meta itemprop="currency" content="{{ shop.currency }}" />
@@ -101,14 +121,19 @@
 					{% endfor %}
 				</select>
 			</div>
+
+			{% for variant in product.selected_or_first_available_variant %}
+				{% if  variant.inventory_quantity == 0 %}
+					<p>show this text if unavail</p>
+				{% endif %}
+			{% endfor %}
+
 			{% if nocart == true %}
 				<div class="nocart">
-					Phone or email Order Only - Please contact <a href="mailto:info@shoplostfound.com">info@shoplostfound.com</a> / 647.348.2810
+					Phone or email Order Only - Please contact info@shoplostfound.com / 647.348.2810
 				</div>
-			{% elsif variant.available == true %}
-				<input type="submit" name="add" {% if variant.available == true %}id="add"{% endif %} value="Add to Cart" class="button">
 			{% else %}
-				<input type="submit" name="add" {% if variant.available == true %}id="add"{% endif %} value="Add to Cart" class="button">
+				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
 
 			{% if sizesoldout == true %}
@@ -116,8 +141,6 @@
 				<input type="text" name="email" id="email" value="Email Address" class="button email">
 				<input type="submit" name="add" id="add" value="Submit" class="button">
 			{% endif %}
-
-
 
 		</form>
 		{% endif %}
@@ -127,8 +150,7 @@
 		<!-- <ul class="tab-links"> -->
 			<ul class="tab-links">
 				{% if product.description != "" or product.metafields.c_f.overview-detail1 %}
-				<!-- each one of these li's are our titles -->
-			<li class="active links"><a href="#details">Details</a></li>
+					<li class="active links"><a href="#details">Details</a></li>
 				{% endif %}
 				<li class="links"><a href="#sizing">Sizing</a></li>
 				<li class="links"><a href="#shipping">Returns</a></li>
@@ -137,36 +159,28 @@
 		<!-- end of phyiscal tab titles.  -->
 
 			<div class="tab-content">
-				{% if product.description != ""  or product.metafields.c_f.overview-detail1 != "" %}
-			        <p id="details" class="tab">
-			            {% include 'product-details' %}
-			        </p>
-		 		{% endif %}
+				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
+				        <p id="details" class="tab">
+				            {% include 'product-details' %}
+				        </p>
+			 		{% endif %}
 
-		        <div id="sizing" class="tab ">
+		        <div id="sizing" class="tab tab-sizing">
+		        	<p>Sizing</p>
+
 							{% if product.description contains "<table" %}
-						   <div class="tab-sizing">{{ product.description }}</div>
-							 {% else %}
-							 {{ pages["gen-sizing"].content }}
+						    {% assign sizechart = product.description | split: '' %}
+								{{ sizechart }}
+
+							{% elsif %}
+								{{ pages["gen-sizing"].content }}
+
 							{% endif %}
 
-							<!--<div>
-								<img src="{{ 'pants-icon.jpg' | asset_url }}">
-								{% if product.type == "Denim" or product.type == "Pants" or product.type == "Pants & Denim" %}
-									<img src="{{ 'pants-icon.jpg' | asset_url }}">
-								{% elsif product.type == "Shirts" %}
-									<img src="{{ 'shirt-icon.jpg' | asset_url }}">
-								{% elsif product.type == "T-Shirts" %}
-									<img src="{{ 't-shirt-icon.jpg' | asset_url }}">
-								{% elsif product.type == "Shorts & Swim" or product.type == "Shorts" %}
-									<img src="{{ 'shorts-icon.jpg' | asset_url }}">
-								{% elsif product.type == "Sweatshirts" or product.type == "Sweaters" %}
-									<img src="{{ 'sweatshirt-icon.jpg' | asset_url }}">
-								{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
-									<img src="{{ 'jacket-icon.jpg' | asset_url }}">
-								{% endif %}
-							</div>-->
 		        </div>
+
+		        <div id="shipping" class="tab tab-sizing">
+		            <p>Shipping + Returns</p>
 
 		        <div id="shipping" class="tab tab-shipping">
 		            {% if product.price > 60000%}
@@ -188,7 +202,6 @@
 	   		 </div>
 	   	</div>
 	</div>
-<!-- </div> extra div-->
 
 {% assign limit = 3 %}
 {% assign skip_product = product %}
@@ -199,10 +212,5 @@
 {% include 'product-loop' %}
 
 {% endif %}
-
-
-
-
-<h4 id="brandlisttitle">Our Brands</h4>
-
-{% include 'ourbrands' %}
+{% include 'ourbrands' %} -->
+>>>>>>> lf-staging

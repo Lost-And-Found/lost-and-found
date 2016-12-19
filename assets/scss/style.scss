@@ -1,4 +1,8 @@
+@import "mixins";
 @import "settings";
+@import"module";
+@import"header";
+@import"mobile_nav";
 
 html,body{
 	padding:0;
@@ -119,17 +123,17 @@ h4{
 
 		.currency-picker{
 			 border: 1px solid grey;
-			 background: url(//cdn.shopify.com/s/files/1/0113/7222/t/18/assets/dropdown-arrow.png?16430886081012957079) no-repeat 86% 43%;
+			 background: url("//cdn.shopify.com/s/files/1/0113/7222/t/18/assets/dropdown-arrow.png?16430886081012957079") no-repeat 86% 43%;
 			 border-radius: 0;
+			 background-color:#333;
 			 -webkit-border-radius: 0;
 			 -moz-border-radius: 0;
 			 padding: 8px 55px 8px 15px;
-			 appearance: none;
-			 -webkit-appearance: none;
-			 -moz-appearance: none;
+			 appearance: none !important;
+			 -webkit-appearance: none !important;
+			 -moz-appearance: none !important;
 			 outline: 0;
 			 display: inline-block;
-			 color: $font-color;
 			 font-family: 'Courier New', Courier, monospace;
 		}
 
@@ -208,7 +212,6 @@ h4{
 		font-size: 1.31em;
 		padding-top: 30px;
 		padding-bottom: 20px;
-
 		#toggleicon{
 			display: none;
 		}
@@ -244,7 +247,7 @@ h4{
 						width: $stick-width;
 						margin:auto;
 						padding: 2%;
-						background-color: #fff;
+						// background-color: #fff;
 						text-align: left;
 						-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
@@ -317,8 +320,7 @@ h4{
 		margin:auto;
 		padding-bottom:40px;
 		li{
-			display:inline-block;
-			width:33%;
+			list-style-type: none;
 		}
 		a{
 			line-height: 28px;
@@ -358,15 +360,6 @@ h4{
 		padding: 20px 0;
 		font-size: 0.95em;
 	}
-	.csscolumns #brandlist,.csscolumns #collections{
-		-webkit-column-count: 3;
-	    -moz-column-count: 3;
-	    column-count: 3;
-
-	    li{
-	    	width:100%;
-	    }
-	}
 	.csscolumns #giftguide{
 		-webkit-column-count: 1;
 	    -moz-column-count: 1;
@@ -376,24 +369,6 @@ h4{
 	    	width:100%;
 	    }
 	}
-
-	.csscolumns{
-		#navcollectionlist #collections,#navbrandlist #brandlist{
-			// -webkit-column-count: 2;
-			// -moz-column-count: 2;
-			// column-count: 2;
-		}
-	}
-	#collections{
-		li:first-child{
-			font-weight: bolder;
-			&:after{
-				@extend .dash;
-				margin: 12px 0;
-			}
-		}
-	}
-
 	.paginate{
 		max-width: $max-width;
 		width: $stick-width;
@@ -412,6 +387,8 @@ h4{
 	}
 
 	#footer{
+		position:relative;
+		z-index:99;
 		@extend .linetop;
 		background-color: #fff;
 		padding: 60px;
@@ -627,10 +604,6 @@ h4{
 		}
 	}
 
-
-
-
-
 /*INDEX*/
 	.imagefullwidth{
 		@extend .linebottom;
@@ -788,9 +761,6 @@ h4{
 				}
 			}
 
-
-
-
 			.rightcolumn{
 				width: 88%;
 				max-width: 725px;
@@ -800,8 +770,6 @@ h4{
 					border: solid 1px $border-color;
 					line-height: 0;
 				}
-
-
 			}
 
 			img{
@@ -861,7 +829,6 @@ h4{
 
 			.spaceafter:after{
 				content: '\00a0';
-				/*border-bottom: 1px solid $font-color;*/
 				display: block;
 				width: 10px;
 				padding: 0;
@@ -1051,15 +1018,12 @@ h4{
 	}
 
 	.sizing{
-
-
 		overflow: hidden;
 		height: 0px;
 		background-color: white;
 		&.open{
 			border-bottom: 1px solid $border-color;
 		}
-
 		-webkit-transition: height 0.5s;
 		-moz-transition: height 0.5s;
 		-o-transition: height 0.5s;
@@ -1083,7 +1047,6 @@ h4{
 				a:hover{
 					color: $font-hover-color;
 					border: 1 solid $font-hover-color;
-
 					-webkit-transition: all 0.3s;
 					-moz-transition: all 0.3s;
 					-o-transition: all 0.3s;
@@ -1108,13 +1071,9 @@ h4{
 			margin: auto;
 			position: relative;
 			padding: 3em 0;
-
-
 			tbody {
 				margin: 0 auto;
-
 			}
-
 		}
 	}
 
@@ -1378,18 +1337,67 @@ h4{
 
 /* Articles */
 	#articlecontent{
-		max-width: $max-width;
-		width: $stick-width;
+		width: 100%;
 		margin:auto;
+		.article-images {
+			display: inline-block;
+			width: 50%;
+			ul{
+				list-style: none;
+
+				li{
+					list-style: none;
+					margin-bottom: -10px;
+				}
+			}
+			img{
+				width: 100%;
+			}
+		}
+
 		.article{
-			width: 70%;
+			position: fixed;
+			height: 100%;
+			overflow: scroll;
+			width: 39%;
+			padding:0 5%;
 			vertical-align: top;
 			display: inline-block;
-			img{
-				border: solid 1px $border-color;
+			font-family: $sans-serif !important;
+			text-align: left !important;
+			letter-spacing: 0.03em;
+
+			h4 {
+				font-size: 2.25em !important;
+				font-family: $monospace;
+				text-align: center;
+				letter-spacing: 0.04em;
+			}
+			.article-nav {
+				margin: 30px 0;
+				padding-bottom:75px;
+
+				.article-btn{
+					width: 49%;
+					text-align: center;
+					height: 60px;
+					background-color: #333333;
+					display: inline-block;
+					font-family: $monospace;
+
+					a {
+						color: #fff;
+						display:block;
+						padding: 18px 0;
+					}
+				}
+			}
+
+			img {
+				display: none !important;
 			}
 			p:first-child{
-				text-align: center;
+				text-align: left;
 				padding-bottom: 30px;
 			}
 			p{
@@ -1436,8 +1444,8 @@ h4{
 		}
 	}
 
-/* Blogs */
 
+/* Blogs */
 	#bloglist{
 		max-width: $max-width;
 		width: $stick-width;
@@ -1521,66 +1529,7 @@ h4{
     .tab-content {
 			margin-top: 10px;
     	height:auto;
-			padding: 0px !important;
-
-			.details-tab {
-				margin-top: 10px;
-				padding: 0px 15px;
-
-				table {
-					display: none !important;
-				}
-				p{
-					display: inline;
-				}
-			}
-			.tab-sizing {
-				table {
-						width: 100%;
-						height: auto;
-						margin-top: 20px;
-
-						tr:first-child {
-							border-top: 1px solid $border-color;
-
-							td{
-								border-right:none;
-							}
-						}
-						tr {
-							border-bottom: 1px solid $border-color;
-
-							td {
-								text-align: center !important;
-								border-right: 1px solid $border-color;
-								line-height: normal;
-    						padding: 7px;
-							}
-							td:last-child {
-								border-right: none;
-							}
-						}
-					}
-				p {
-					display: none !important;
-				}
-				:not(table){
-				}
-				img {
-					display: block;
-					margin: auto;
-					height: 200px;
-					width: auto;
-				}
-			}
-			.tab-shipping {
-				margin-top: 10px;
-				p {
-					display: inherit;
-				}
-			}
-		}
-
+    }
 
     .tab-links li {
         margin:0px 5px;
@@ -1615,9 +1564,12 @@ h4{
     /*----- Content of Tabs -----*/
     .tab-content {
         padding:0px 15px;
-        // border-radius:3px;
-        // box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-        // background:#fff;
+
+				.details-tab {
+					table {
+						display: none !important;
+					}
+				}
     }
 
         .tab {
@@ -1638,14 +1590,13 @@ h4{
 
         #details {
         	// background-color:cadetblue;
+
         }
 
 		.hide {
 			display:none;
 		}
 
-
 /* Animations */
-
 @import "tablet.scss";
 @import "mobile.scss";

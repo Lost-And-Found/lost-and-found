@@ -1,8 +1,9 @@
-<div class="details-area details-tab">
-	{%if product.metafields.c_f.overview-detail1 or product.discritpion%}
-		{%if product.discritpion != ""%}
-			{{product.discritpion}}
-		{%endif%}
+<div class="description details-tab" itemprop="description">
+	{{ product.description }}
+</div>
+
+<div class="details-area">
+	{%if product.metafields.c_f.overview-detail1 %}
 		<div>
 			<ul >
 				{%if product.metafields.c_f.overview-detail1%}
@@ -27,7 +28,8 @@
 					<li>{{product.metafields.c_f.overview-detail7}}</li>
 				{%endif%}
 				{%if product.metafields.c_f.overview-detail8%}
-					<li>{{product.metafields.c_f.overview-detail8}}</li>
+
+				<li>{{product.metafields.c_f.overview-detail7}}</li>
 				{%endif%}
 			</ul>
 		</div>

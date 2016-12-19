@@ -1,7 +1,19 @@
 <ul id="brandlist">
-{% for collection in collections %}{% unless collection.handle == 'frontpage' or collection.handle == 'new-arrivals' or collection.handle == 'sale' or collection.metafields.c_f.nav_brand_selector == 'hide'%}{% capture collection_title %}{{ collection.title | escape }}{% endcapture %}{% if collection.products_count > 0 %}<li class="brandlink">	
-			<p>{{collection.handel}}</p>
-			<a href="{{ collection.url }}" title="Browse {{ collection_title }}">{{ collection.title }}</a>
-		</li>{% endif %}{% cycle '', '', new_row %}{% endunless %}{% endfor %}
-</ul>
+<a href="/brands/all" title="Browse All" class="allbrands block">#</a>
+{% assign current = "" %}
+{% for product_vendor in shop.vendors %}
+{% assign first_letter = product_vendor | strip_html | upcase | truncate: 1, '' %}
+    {% unless first_letter == current %}
+        <li class="vendor-letter">{{ first_letter }}</li>
+    {% endunless %}
+    <li>{{ product_vendor | link_to_vendor  }}</li>
+    {% assign current = first_letter %}
+{% endfor %}
 
+<!-- {% for collection in collections %}{% unless collection.handle == 'frontpage' or collection.handle == 'new-arrivals' or collection.handle == 'sale' or collection.metafields.c_f.nav_brand_selector == 'hide'%}{% capture collection_title %}{{ collection.title | escape }}{% endcapture %}{% if collection.products_count > 0 %}
+	
+		<li class="brandlink">
+			<p>{{collection.handel}}
+			<a href="{{ collection.url }}" title="Browse {{ collection_title }}">{{ collection.title }}</a></p>
+		</li>{% endif %}{% cycle '', '', new_row %}{% endunless %}{% endfor %} -->
+</ul>

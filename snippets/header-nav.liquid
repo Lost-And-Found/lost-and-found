@@ -1,0 +1,71 @@
+<div class="wrapper__nav">
+	<div class="nav--dark">
+		{% include 'mobile-nav' %}
+		<div class="logo__container">
+			<a href="/" class="logo"></a>
+		</div>
+		<div id="nav" class="">
+			<div class="primary_nav">
+			<ul>
+			{% for link in linklists[settings.main_linklist].links %}
+				<li class="top_link {% if link.active %}selected{% endif %} {% if has_drop_down %}hassublinks{% endif %}">
+
+					{% if link.title == "Brands" %}
+						<a href="#" id="brandslink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+						<div id="navbrandlist">
+							{% include 'ourbrands' %}
+							<div class="exit">X</div>
+						</div>
+
+					{% elsif  link.title == "Categories"%}
+						<a href="#" id="categorylink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+						<div id="navcollectionlist">
+							<div class="all">
+								<a href="/collections/all" title="Browse All" class="shopall block">Shop All</a>
+								<a href="/collections/the-vault" title="Sale" class="shopall block">The Vault</a>
+							</div>
+							<ul id="collections">
+								{% for product_type in shop.types %}
+								<li class="collectionlink">
+										{{ product_type | link_to_type }}
+									</li>{% endfor %}
+							</ul>
+							<div class="exit">X</div>
+						</div>
+
+					{% elsif  link.title == "New Arrivals"%}
+						<a href="/collections/{{ link.handle }}?sort_by=created-descending" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+
+					{% elsif link.title == "Gift Guide" %}
+						<a href="#" id="giftlink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+						<div id="giftguidelist">
+							<ul id="giftguide">
+								<li class="collectionlink shopall block">	<a href="/collections/gifts-under-50" title="Gifts under $50" class="shopall block">Gifts under $50</a> </li>
+								<li class="collectionlink shopall block">	<a href="/collections/gifts-from-50-100" title="Gifts from $100 - $200" class="shopall block">Gifts from $50 - $100</a> </li>
+								<li class="collectionlink shopall block">	<a href="/collections/gifts-from-100-200" title="Gifts from $100 - $200" class="shopall block">Gifts from $100 - $200</a> </li>
+								<li class="collectionlink shopall block">	<a href="/collections/gifts-over-200" title="Gifts over $200" class="shopall block">Gifts over $200</a></li>
+							</ul>
+							<div class="exit">X</div>
+						</div>
+
+					{% else %}
+						<a href="{{link.url}}" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+
+
+					{% endif %}
+				</li>
+			{% endfor %}
+			</ul>
+			</div>
+		</div>
+		<div class="utility__nav">
+			<a class="utility_cart" href="/cart">cart ({{ cart.item_count }})</a>
+			<form class="search" action="/search">
+				<input type="hidden" name="type" value="product" />
+				<input type="submit" class="submit" value="»">
+				<input type="text" name="q" class="search_box" placeholder="Search" value="{{ search.terms }}" />
+			</form>
+			{% include 'currency-picker' %}
+		</div>
+	</div>
+</div>

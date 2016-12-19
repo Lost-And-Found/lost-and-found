@@ -1,21 +1,39 @@
-
-<div class="breadcrumbs">
-	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span>
-	&#62;
-	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ blog.url }}" title="{{ blog.title | escape }}" itemprop="url"><span itemprop="title">{{ blog.title }}</span></a></span>
-	&#62;
-	<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">{{ article.title }}</span></span>
-</div>
-
-<h4>{{ article.title }}</h4>
-
 <div id="articlecontent">
+	<div class="article-images">
+		<ul>
+		     {% if article.content contains "<img" %}
+		          {% assign content-src = article.content | split: 'src="' %}
+		          {% assign content-size = content-src.size | minus:1 %}
+		          {% for i in (1..content-size) %}
+		              {% assign src = content-src[i] | split: '"' | first | replace: '//cdn', 'http://cdn';;;; | replace: 'http:http://';;;;, 'http://';;;; | remove: 'https:' %}
+
+
+		<li>
+		<img src="{{src}}" />
+		</li>
+				{% endfor %}
+		     {% endif %}
+		</ul>
+	</div>
+
 	<div class="article">
-		{{ article.content }}
 
-	</div><div class="listofblogs">
+			<h4>{{ article.title }}</h4>
+			{{ article.content }}
+			<div class="article-nav">
+				<ul>
+					<li class="article-btn">
+						<a href="{{ blog.next_article }}" title="{{ blog.next_article.title | escape }}">Next Article</a>
+					</li>
+					<li class="article-btn">
+						<a href="{{ blog.previous_article }}" title="{{ blog.previous_article.title | escape }}">Previous Article</a>
+					</li>
+				</ul>
+			</div>
 
-
+	</div>
+{% comment %}
+	<div class="listofblogs">
 		<h3>Recent Articles</h3>
 		<ul>
 			{% for article in blogs["blog"].articles limit:5 %}
@@ -26,7 +44,6 @@
 			{% endfor %}
 		</ul>
 	</div>
-
 	<div class="subsection">
 		{% for tag in article.tags %}
 			{% if forloop.index0 == 0 %}
@@ -34,5 +51,6 @@
 			{% endif %}
 			<a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} tagged {{ tag | escape }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
 		{% endfor %}
-	</div>
+	</div> -->
+{% endcomment %}
 </div>

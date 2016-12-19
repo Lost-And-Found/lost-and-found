@@ -2,13 +2,11 @@
 
 
 @media (max-width: 600px) {
-
-
 /* Mobile Nav */
 	#topbar form .search_box {
 	 width: auto;
 	}
-	
+
 
 /* Index */
 	#recent-articles {
@@ -57,39 +55,39 @@
 			display: inline-block;
 		}
 	}
-	
+
 	#productwrapper {
 		.images{
 			width: 100%;
 		}
-	
+
 		.info {
 			width: 100%;
-			
+
 			.dashafter:after {
 				margin: 20px auto;
 				border-bottom: 1px solid black;
 				height: 0.1em;
 			}
-			
+
 		}
-	
+
 		.description{
 			width: 70%;
 			text-align: center;
-			
+
 		}
-		
+
 		form {
 			width: 70%;
 		}
-		
+
 		.title, .price {
 			width: 60%;
 			text-align: center;
 			padding: 0 10%;
 		}
-	
+
 	}
 
 .tabs, .tab-content {
@@ -181,6 +179,27 @@
 		}
 	}
 
+	.article-images {
+		margin-top: 25px; 
+		width: auto !important;
+		overflow-y: overflow;
+
+		ul	{
+			display: inline-block;
+			white-space:nowrap;
+    	overflow-x:auto;
+
+			li {
+				display: inline-block;
+				width: 48%;
+				margin: -10px !important;
+			}
+		}
+	}
+
+	.article {
+		position: inherit !important;
+		width: auto !important;
+	}
+
 }
-
-

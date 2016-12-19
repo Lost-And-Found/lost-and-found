@@ -1,0 +1,101 @@
+// this is where jazz is writing her scss for the module pop, she is importing it in style.scss
+.module--notvisible {
+	display:none;
+}
+.module--visible {
+	background-color:#fff;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:50vw;
+	height:auto;
+	padding:40px 20px 20px 20px;
+	transform: translate(-50%, -50%);
+	border: 1px solid $bk-dark-color;
+	label[for="nav-toggle"] {
+		background-color: #fff;
+		border: 1px solid $bk-dark-color;
+		position:absolute;
+		width: 20px;
+		height: 20px;
+		padding:14px 10px 6px 10px;
+		z-index:9999;
+		top: 15px;
+		left: 15px;
+		&:hover {
+			background-color:#fff;
+		}
+		&:before, &:after {
+			content:"";
+		}
+		span, &:after, &:before {
+		overflow:hidden;
+		height:0px;
+		padding-top:2px;
+		position:absolute;
+		width:20px;
+		transform-origin:50% 50%;
+		background-color: $bk-dark-color;
+		}
+		span {
+			opacity:0;
+		}
+		&:after {
+			top:50%;
+			transform: rotate(45deg);
+			// transform: translate(-50% -50%);
+		}
+		&:before {
+			top:50%;
+			transform: rotate(-45deg); 
+			// transform: translate(-50% -50%);
+		}
+	}	
+}
+	.block {
+		display:flex;
+		flex-direction:column;
+		padding-left:60px;
+		.title {
+			font-size:20px;
+			padding-bottom:15px;
+		}
+		.blurb {
+			font-size:14px;
+		}
+		.form--contact {
+			width:100%;
+			padding:20px 0px 0px 0px;
+			#contact_form_email {
+				width:75%;
+			}
+		}
+		#contact_form_email {
+			// background-color:#fff;
+			height:25px;
+			padding-left:10px;
+		}
+	}
+	
+	// make the label input  a jquery object when it is clicked, selector the module and remove its visible class and add its nonvisable class;
+	// then on submit of this email as well, tigger the same action;
+
+	#nav-toggle {
+		position:absolute;
+		top:0;left:0;
+		z-index:9999999;
+		display:none;
+	}
+	#nav-toggle:checked ~ label[for="nav-toggle"] {
+		background-color:orange;
+	}
+	#nav-toggle:checked ~ .block {
+		opacity:0;
+		// display:none;
+	}
+
+	@media (max-width:1050px) {
+		.module--visible { 
+			// height:22vw;
+		}
+	}
