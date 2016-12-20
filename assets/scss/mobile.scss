@@ -180,7 +180,7 @@
 	}
 
 	.article-images {
-		margin-top: 25px; 
+		margin-top: 25px;
 		width: auto !important;
 		overflow-y: overflow;
 
@@ -191,8 +191,13 @@
 
 			li {
 				display: inline-block;
-				width: 48%;
 				margin: -10px !important;
+
+				img{
+					height: 280px;
+					max-width:100%;
+					width: auto !important;
+				}
 			}
 		}
 	}

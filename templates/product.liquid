@@ -108,8 +108,8 @@
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
 							<li {% if forloop.first %}class="selected"{% endif %}><a href="{{ variant.id }}">{{ variant.title }} {% if variant.inventory_quantity == 1 %}<span> {{ variant.inventory_quantity }} LEFT </span>{% endif %} </a></li>
-						{% else %}
-							<li {% if forloop.first %}class="selected strike red"{% else %} class="strike red" {% endif %}><a href="{{ variant.id }}">{{ variant.title }} <span> SOLD OUT</span> </a></li>
+						{% comment %} {% else %}
+							<li {% if forloop.first %}class="selected strike red"{% else %} class="strike red" {% endif %}><a href="{{ variant.id }}">{{ variant.title }} <span> SOLD OUT</span> </a></li> {% endcomment %}
 						{% endif %}
 					{% endfor %}
 				</ul>
@@ -120,18 +120,18 @@
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
-						{% else %}
-							<option value="{{variant.id}}"> {{ variant.title }}</option>
+							{% comment %} {% else %}
+							<option value="{{variant.id}}"> {{ variant.title }}</option> {% endcomment %}
 						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
 
-			{% for variant in product.selected_or_first_available_variant %}
+	{% comment %} 		{% for variant in product.selected_or_first_available_variant %}
 				{% if  variant.inventory_quantity == 0 %}
 					<p>show this text if unavail</p>
 				{% endif %}
-			{% endfor %}
+			{% endfor %} {% endcomment %}
 
 			{% if nocart == true %}
 				<div class="nocart">
@@ -140,13 +140,13 @@
 			{% else %}
 				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
-
+{% comment %}
 			{% if sizesoldout == true %}
 				<div class="sm-txt">NOTIFY ME WHEN ITEM IS RESTOCKED</div>
 				<input type="text" name="email" id="email" value="Email Address" class="button email">
 				<input type="submit" name="add" id="add" value="Submit" class="button">
 			{% endif %}
-
+{% endcomment %}
 
 
 		</form>
@@ -181,7 +181,7 @@
 						    {% assign sizechart = product.description | split: '' %}
 								{{ sizechart }}
 
-							{% elsif %}
+							{% else %}
 								{{ pages["gen-sizing"].content }}
 
 							{% endif %}
