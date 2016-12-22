@@ -9,7 +9,7 @@ body {
 option, select {
 	appearance: none !important;
 	-webkit-appearance: none !important;
-	-moz-appearance: none !important;			
+	-moz-appearance: none !important;
 }
 
 #nav {
@@ -95,7 +95,7 @@ option, select {
 	transform: translateX(-50%);
 	transition: all 0.5s ease-in-out;
 	#nav li:hover {
-		#navcollectionlist, #navbrandlist {
+		#navcollectionlist, #navbrandlist, #giftguidelist  {
 			position:fixed;
 			width:100%;
 			min-width:0;
@@ -107,7 +107,7 @@ option, select {
 			padding-top:20px;
 			transition: all 0.5s ease-in-out;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-			#collections, #brandlist {
+			#collections, #brandlist, #giftlist {
 				background-color:transparent;
 				box-shadow: none;
 				@include flexbox();
@@ -127,6 +127,11 @@ option, select {
 				&:first-child {
 					display:none;
 				}
+			#giftlist li {
+				&:first-child {
+					display: inline-block !important;
+				}
+			}
 			}
 			.vendor-letter {
 				font-size:12px;
@@ -172,6 +177,7 @@ option, select {
 		.small_dropdown {
 			top:75px !important;
 		}
+		#giftlist{ height: 20vh; }
 		#navbrandlist {
 			height:85vh;
 			#brandlist {
@@ -532,7 +538,7 @@ body > li {
 			-webkit-transition: left 1s;
 			-moz-transition: left 1s;
 			-o-transition: left 1s;
-			transition: left 1s;		
+			transition: left 1s;
 			ul {
 				flex-direction:column;
 				width:100%;

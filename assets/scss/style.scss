@@ -242,7 +242,7 @@ h4{
 					.exit{
 						display: none;
 					}
-					#brandlist,#collections,{
+					#brandlist,#collections,#giftguide{
 						max-width: $max-width;
 						width: $stick-width;
 						margin:auto;
@@ -253,16 +253,7 @@ h4{
 						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 						box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 					}
-					#giftguide {
-						width: 200px;
-						margin:auto;
-						padding: 2%;
-						background-color: #fff;
-						text-align: left;
-						-webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
-						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
-						box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
-					}
+					
 				}
 
 			}

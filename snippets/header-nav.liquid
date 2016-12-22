@@ -37,14 +37,15 @@
 						<a href="/collections/{{ link.handle }}?sort_by=created-descending" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
 
 					{% elsif link.title == "Gift Guide" %}
-						<a href="#" id="giftlink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
-						<div id="giftguidelist">
-							<ul id="giftguide">
-								<li class="collectionlink shopall block">	<a href="/collections/gifts-under-50" title="Gifts under $50" class="shopall block">Gifts under $50</a> </li>
-								<li class="collectionlink shopall block">	<a href="/collections/gifts-from-50-100" title="Gifts from $100 - $200" class="shopall block">Gifts from $50 - $100</a> </li>
-								<li class="collectionlink shopall block">	<a href="/collections/gifts-from-100-200" title="Gifts from $100 - $200" class="shopall block">Gifts from $100 - $200</a> </li>
-								<li class="collectionlink shopall block">	<a href="/collections/gifts-over-200" title="Gifts over $200" class="shopall block">Gifts over $200</a></li>
-							</ul>
+						<a href="#" id="giftguidelink" title="{{ link.title }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>						<div id="giftguidelist">
+							<div id="giftguidelist">
+							<ul id="giftlist">
+								{% for link in linklists.gift-guide.links %}
+		 							<li id="giftguidelink">
+										{{ link.title | link_to: link.url }}
+									</li>
+	 							{% endfor %}
+					  	</ul>
 							<div class="exit">X</div>
 						</div>
 
