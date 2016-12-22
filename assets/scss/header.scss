@@ -29,9 +29,6 @@ option, select {
 			text-align:left;
 			display:flex;
 			align-content:center;
-			li {
-				// height:100%;
-			}
 			li > a {
 				padding-bottom:10px;
 				border-bottom:1.5px solid transparent;
@@ -102,7 +99,6 @@ option, select {
 			top:100px;
 			background-color:white;
 			margin:0;
-			// max-height:40vh;
 			height:auto;
 			padding-top:20px;
 			transition: all 0.5s ease-in-out;
@@ -112,7 +108,6 @@ option, select {
 				box-shadow: none;
 				@include flexbox();
 				-webkit-box-orient:vertical;
-				// -webkit-box-direction:normal;
 				-webkit-flex-direction:column;
 				-ms-flex-direction:column;
 				flex-direction:column;
@@ -122,16 +117,24 @@ option, select {
 				height:35vh;
 				padding: 20px;
 			}
+			#giftlist {
+				height:12vh;
+			}
 			li {
 				// why is there a blank category?
 				&:first-child {
 					display:none;
 				}
-			#giftlist li {
-				&:first-child {
-					display: inline-block !important;
-				}
 			}
+			#giftlist li {
+				a {
+					// width:100%;
+					// text-align:left;
+					// display:block;
+				}
+				&:first-child {
+					display: inline-block;
+				}
 			}
 			.vendor-letter {
 				font-size:12px;
