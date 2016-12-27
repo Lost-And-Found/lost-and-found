@@ -76,9 +76,6 @@
 		<h2 class="dashafter title">
 			{{ product.title }}
 		</h2>
-		<!-- {{product.vendor}}-{{product.type}} -->
-		<!-- {{ 'dropdown-arrow.png' | asset_url }} -->
-
 
 		<div class="spaceafter price" itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
 			<meta itemprop="currency" content="{{ shop.currency }}" />
@@ -167,11 +164,9 @@
 
 			<div class="tab-content">
 				{% if product.description != ""  or product.metafields.c_f.overview-detail1 %}
-					<!-- <div id="details" class="tab"> -->
 				        <p id="details" class="tab">
 				            {% include 'product-details' %}
 				        </p>
-				    <!-- </div> -->
 			 		{% endif %}
 
 		        <div id="sizing" class="tab tab-sizing">
@@ -208,7 +203,6 @@
 	   		 </div>
 	   	</div>
 	</div>
-<!-- </div> extra div-->
 
 {% assign limit = 3 %}
 {% assign skip_product = product %}
@@ -219,10 +213,3 @@
 {% include 'product-loop' %}
 
 {% endif %}
-
-
-
-<!--
-<h4 id="brandlisttitle">Our Brands</h4>
-
-{% include 'ourbrands' %} -->

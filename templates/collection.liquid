@@ -1,7 +1,5 @@
 {% paginate collection.products by 42 %}
 
-
-
 <div class="breadcrumbs">
 	{% if collection.handle != newArrivalsPage %}
 			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
@@ -46,8 +44,6 @@
 {% assign products_per_row = settings.products_per_row %}
 {% include 'product-loop' %}
 
-
-
 <div class="paginate">
 	<div>
 		{% if paginate.previous %}
@@ -75,8 +71,3 @@
 </div>
 
 {% endpaginate %}
-
-
-<!-- <h4 id="brandlisttitle">Our Brands</h4>
-
-{% include 'ourbrands' %} -->

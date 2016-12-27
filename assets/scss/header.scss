@@ -127,11 +127,6 @@ option, select {
 				}
 			}
 			#giftlist li {
-				a {
-					// width:100%;
-					// text-align:left;
-					// display:block;
-				}
 				&:first-child {
 					display: inline-block;
 				}
@@ -180,7 +175,9 @@ option, select {
 		.small_dropdown {
 			top:75px !important;
 		}
-		#giftlist{ height: 20vh; }
+		#giftlist { 
+			height: 20vh; 
+		}
 		#navbrandlist {
 			height:85vh;
 			#brandlist {
@@ -415,16 +412,14 @@ body > li {
 		font-size:12px;
 		.submit {
 			outline: none !important;
-			width:100px;
+			// width:100px;
+			min-height:0;
 			font-size:12px;
 		}
-		.submit:hover ~ .search_box {
+		.search_box {
 			width:70px;
 			font-size:12px;
-		}
-		.search_box:hover {
-			width:70px;
-			font-size:12px;
+			padding:0 10px;
 		}
 		.search_box:focus {
 			outline: none !important;

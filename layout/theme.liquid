@@ -29,10 +29,6 @@
 		<meta name="description" content="{{ page_description }}" />
 	{% endif %}
 
-	{% if template contains 'article' %}
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	{% endif %}
-
 	{% if template contains 'product' %}
 		<meta property="og:url" content="{{ shop.url }}{{ product.url }}" />
 		<meta property="og:title" content="{{ product.title }}" />

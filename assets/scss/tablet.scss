@@ -58,18 +58,6 @@
 		>div{
 			position: relative;
 		}
-		ul{
-			// position: absolute;
-			// left: -100%;
-			// margin-top: 30%;
-			// padding: 2em;
-			// background-color: $bk-color;
-			// -webkit-transition: left 1s;
-			// -moz-transition: left 1s;
-			// -o-transition: left 1s;
-			// transition: left 1s;			
-			// border: 1px solid $border-color;
-		}
 		&.open{ 
 			height: 100%;
 			ul{
@@ -85,11 +73,9 @@
 					transition: all .2s linear;
 					-o-transition: all .2s linear;
 					-moz-transition: all .2s linear;
-					-webkit-transition: all .2s linear;		
-					
+					-webkit-transition: all .2s linear;				
 				}
-				
-				
+							
 				#toggleicon-top {
 					transform: rotate(45deg);
 				}
@@ -99,8 +85,7 @@
 				}
 				
 				#toggleicon-bottom {
-					transform: rotate(-45deg);
-					
+					transform: rotate(-45deg);	
 				}
 			}
 		}
@@ -272,8 +257,6 @@
 			padding-bottom: 4em;
 		}
 	}
-
-
 
 /*  FOOTER  */
 #footer{
