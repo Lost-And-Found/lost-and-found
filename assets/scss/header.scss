@@ -59,6 +59,7 @@ option, select {
 				}
 				li {
 					font-family: Montserrat-Regular;
+					font-family: Montserrat;
 				}
 			}
 		}
@@ -127,6 +128,7 @@ option, select {
 			}
 			li {
 				font-family: Montserrat-Regular;
+				font-family: Montserrat;
 				// why is there a blank category?
 				&:first-child {
 					display:none;
@@ -245,6 +247,8 @@ nav {
 //catogory dropdown stuff
 #navcollectionlist {
 	display:none;
+	font-family: Montserrat-Regular;
+	font-family: Montserrat;
 }
 body > li {
 	display:none;
