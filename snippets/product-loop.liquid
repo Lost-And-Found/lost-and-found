@@ -1,11 +1,11 @@
 {% if product %}
-	{% for pro in products limit: limit%}
-		{% if pro.title == product.title %}
+	{% for pro in products limit: limit | sort:"date"%}
+		{% if pro.title == product.title | sort:"date" %}
 			{% assign limit = 4 %}
 		{% endif %}
 	{% endfor %}
 {% endif %}
 <ul class="products">
-
-	{% for product in products limit: limit %}{% if product.id == skip_product.id or skip == true %}{% assign product_found = true %}{% else %}{% include 'product-thumbnail' %}{% endif %}{% endfor %}
+	{% assign products = collection.products | sort:"published_at" | reverse %}
+	{% for product in products limit: limit   %}{% if product.id == skip_product.id or skip == true %}{% assign product_found = true %}{% else %}{% include 'product-thumbnail' %}{% endif %}{% endfor %}
 </ul>
