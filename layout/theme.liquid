@@ -11,6 +11,7 @@
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.png' | asset_url }}">
 	<link rel="canonical" href="{{ canonical_url }}" />
 
@@ -26,10 +27,6 @@
 		<meta name="description" content="Product collections from {{ shop.name }} - Page {{ current_page}}" />
 	{% elsif page_description != '' %}
 		<meta name="description" content="{{ page_description }}" />
-	{% endif %}
-
-	{% if template contains 'article' %}
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	{% endif %}
 
 	{% if template contains 'product' %}

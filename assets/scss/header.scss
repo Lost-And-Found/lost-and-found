@@ -29,9 +29,6 @@ option, select {
 			text-align:left;
 			display:flex;
 			align-content:center;
-			li {
-				// height:100%;
-			}
 			li > a {
 				padding-bottom:10px;
 				border-bottom:1.5px solid transparent;
@@ -59,6 +56,10 @@ option, select {
 				padding-top:10px;
 				@include breakpoint(1350px) {
 					font-size:12px;
+				}
+				li {
+					font-family: Montserrat-Regular;
+					font-family: Montserrat;
 				}
 			}
 		}
@@ -102,17 +103,17 @@ option, select {
 			top:100px;
 			background-color:white;
 			margin:0;
-			// max-height:40vh;
 			height:auto;
 			padding-top:20px;
 			transition: all 0.5s ease-in-out;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 			#collections, #brandlist, #giftlist {
+				font-family: Montserrat-Regular;
+				font-family: Montserrat !important;
 				background-color:transparent;
 				box-shadow: none;
 				@include flexbox();
 				-webkit-box-orient:vertical;
-				// -webkit-box-direction:normal;
 				-webkit-flex-direction:column;
 				-ms-flex-direction:column;
 				flex-direction:column;
@@ -122,16 +123,21 @@ option, select {
 				height:35vh;
 				padding: 20px;
 			}
+			#giftlist {
+				height:12vh;
+			}
 			li {
+				font-family: Montserrat-Regular;
+				font-family: Montserrat;
 				// why is there a blank category?
 				&:first-child {
 					display:none;
 				}
+			}
 			#giftlist li {
 				&:first-child {
-					display: inline-block !important;
+					display: inline-block;
 				}
-			}
 			}
 			.vendor-letter {
 				font-size:12px;
@@ -142,6 +148,7 @@ option, select {
 				font-style: normal;
 				font-stretch: normal;
 				height: 20px;
+				padding:0;
 			}
 
 			.all {
@@ -149,17 +156,23 @@ option, select {
    				width:80%;
    				padding:0 20px;
 				margin:0 auto;
+				font-family: Montserrat !important;
 			}
 			.shopall {
 				display:block;
 				width:100%;
 				text-align:left;
 				padding:0;
+				font-family: Montserrat !important;
 			}
 
 			.allbrands {
 				text-align:left;
-				padding-left:10px;
+				padding-left:0px;
+				font-family: Montserrat !important;
+			}
+			p {
+				font-family: Montserrat-Regular;
 			}
 
 			a {
@@ -169,6 +182,7 @@ option, select {
 				font-family:Montserrat-Regular;
 				font-size:13px;
 				line-height:21px;
+				padding-right:20px;
 				&:hover {
 					color:#ECECEC;
 				}
@@ -177,11 +191,13 @@ option, select {
 		.small_dropdown {
 			top:75px !important;
 		}
-		#giftlist{ height: 20vh; }
+		#giftlist {
+			height: 20vh;
+		}
 		#navbrandlist {
-			height:85vh;
+			height:75vh;
 			#brandlist {
-				height:80vh;
+				height:70vh;
 				position:relative;
 				li {
 					width:20%;
@@ -231,6 +247,8 @@ nav {
 //catogory dropdown stuff
 #navcollectionlist {
 	display:none;
+	font-family: Montserrat-Regular;
+	font-family: Montserrat;
 }
 body > li {
 	display:none;
@@ -412,16 +430,14 @@ body > li {
 		font-size:12px;
 		.submit {
 			outline: none !important;
-			width:100px;
+			// width:100px;
+			min-height:0;
 			font-size:12px;
 		}
-		.submit:hover ~ .search_box {
+		.search_box {
 			width:70px;
 			font-size:12px;
-		}
-		.search_box:hover {
-			width:70px;
-			font-size:12px;
+			padding:0 10px;
 		}
 		.search_box:focus {
 			outline: none !important;
@@ -547,7 +563,7 @@ body > li {
 				position:static;
 				top:0;
 				.top_link {
-					display:block;
+					// display:block;
 					&:hover a {
 						border-bottom:1px solid transparent;
 						color:#969696;
@@ -559,6 +575,20 @@ body > li {
 					}
 				}
 			}
+		}
+	}
+}
+
+.all, .allbrands, .shopall   {
+	font-family: Montserrat !important;
+}
+
+.brandlink {
+	font-family: Montserrat !important;
+	p {
+		font-family: Montserrat !important;
+		a {
+			font-family: Montserrat !important;
 		}
 	}
 }

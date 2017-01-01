@@ -344,25 +344,18 @@ h4{
 		max-width: $max-width;
 		width: $stick-width;
 		margin:auto;
+		margin-top:30px;
 		padding: 20px 0;
 		font-size: 0.95em;
 	}
 	.mx-width-breadcrumbs{
 		width: 95%;
 		margin:auto;
+		margin-top:30px;
 		padding: 20px 0;
 		font-size: 0.95em;
 	}
-	// .csscolumns #brandlist,.csscolumns #collections{
-	// 	// -webkit-column-count: 3;
-	//  //    -moz-column-count: 3;
-	//  //    column-count: 3;
 
-	//     li{
-	//     	// @include flex(0 1 20%);
-	//     	// width:100%;
-	//     }
-	// }
 	.csscolumns #giftguide{
 		-webkit-column-count: 1;
 	    -moz-column-count: 1;
