@@ -253,7 +253,7 @@ h4{
 						-moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 						box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.1);
 					}
-					
+
 				}
 
 			}
@@ -1536,7 +1536,67 @@ h4{
 
     .tab-content {
     	height:auto;
-    }
+			padding: 0px !important;
+
+ 			.details-tab {
+ 				margin-top: 10px;
+				height:auto;
+ 				padding: 0px 15px;
+
+ 				table {
+ 					display: none !important;
+ 				}
+ 				p{
+ 					display: inline;
+ 				}
+ 			}
+ 			.tab-sizing {
+ 				table {
+ 						width: 100%;
+ 						height: auto;
+ 						margin-top: 20px;
+
+ 						tr:first-child {
+ 							border-top: 1px solid $border-color;
+
+ 							td{
+ 								border-right:none;
+ 							}
+ 						}
+ 						tr {
+ 							border-bottom: 1px solid $border-color;
+
+ 							td {
+ 								text-align: center !important;
+ 								border-right: 1px solid $border-color;
+ 								line-height: normal;
+     						padding: 7px;
+ 							}
+ 							td:last-child {
+ 								border-right: none;
+ 							}
+ 						}
+ 					}
+ 				p {
+ 					display: none !important;
+ 				}
+ 				:not(table){
+ 				}
+ 				img {
+ 					display: block;
+ 					margin: auto;
+ 					height: 200px;
+ 					width: auto;
+ 				}
+ 			}
+ 			.tab-shipping {
+ 				margin-top: 10px;
+ 				p {
+ 					display: inherit;
+ 				}
+ 			}
+ 		}
+
 
     .tab-links li {
         margin:0px 5px;
