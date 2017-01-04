@@ -1,8 +1,7 @@
 @import "settings";
 
 .collectionlink {
-	font-family: Montserrat-Regular;
-	font-family: Montserrat;
+	font-family: Montserrat-Regular, Montserrat !important;
 }
 
 @media (max-width: 1000px) {
@@ -33,7 +32,7 @@
 				padding-top: 25%;
 			}
 		}
-		
+
 		li{
 			text-align: left;
 			display: block;
@@ -50,21 +49,20 @@
 					padding-bottom: 0;
 				}
 			}
-		} 
+		}
 		li:hover {
 			.bellowarrow{
 				display: none;
 			}
 			#navbrandlist,#navcollectionlist,#giftguidelist{
 				display: none;
-				font-family: Montserrat-Regular;
-				font-family: Montserrat;
+				font-family: Montserrat-Regular, Montserrat !important;
 			}
 		}
 		>div{
 			position: relative;
 		}
-		&.open{ 
+		&.open{
 			height: 100%;
 			ul{
 				left: 0;
@@ -79,19 +77,19 @@
 					transition: all .2s linear;
 					-o-transition: all .2s linear;
 					-moz-transition: all .2s linear;
-					-webkit-transition: all .2s linear;				
+					-webkit-transition: all .2s linear;
 				}
-							
+
 				#toggleicon-top {
 					transform: rotate(45deg);
 				}
-				
+
 				#toggleicon-middle {
 					opacity: 0;
 				}
-				
+
 				#toggleicon-bottom {
-					transform: rotate(-45deg);	
+					transform: rotate(-45deg);
 				}
 			}
 		}
@@ -107,28 +105,28 @@
 			border: 1px solid $bk-dark-color;
 			padding:14px 10px 6px 10px;
 			z-index: 9999999;
-			
+
 			transition: all .2s linear;
 			-o-transition: all .2s linear;
 			-moz-transition: all .2s linear;
-			-webkit-transition: all .2s linear;		
-			
+			-webkit-transition: all .2s linear;
+
 			span {
 				 width: 20px;
 				 height: 2px;
 				 background-color: $bk-dark-color;
 				 display: block;
 				 margin: 0 0 3px 0;
-				 
+
 				 transition: all .2s linear;
 				 -o-transition: all .2s linear;
 				 -moz-transition: all .2s linear;
-			 	 -webkit-transition: all .2s linear;	
+			 	 -webkit-transition: all .2s linear;
 			}
 		}
 	}
 	body > #navbrandlist,body > #navcollectionlist,body > #giftguidelist{
-		display: block;
+		display: block; 
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -142,7 +140,7 @@
 		.all {
 			a {
 				padding-left:0;
-				font-family: Montserrat-Regular;
+				font-family: Montserrat-Regular, Montserrat !important;
 				&:hover {
 					color:#969696;
 				}
@@ -167,7 +165,7 @@
 			display: block;
 			-webkit-column-count: 2;
 			-moz-column-count: 2;
-			column-count: 2;	
+			column-count: 2;
 		}
 		.allbrands {
 			padding-left:0;
@@ -175,13 +173,13 @@
 	}
 
 	.collectionlink {
-		font-family: Montserrat-Regular;
+		font-family: Montserrat-Regular , Montserrat !important;
 		font-family: Montserrat;
 		&:first-child {
 			display:none;
 		}
 	}
-	
+
 /* Product */
 	.products{
 		> li{
@@ -225,23 +223,23 @@
 	.info {
 		width: 100%;
 		margin: 4em 0 2em 0em;
-		
+
 		.dashafter:after{
 				margin: 20px auto;
 			}
 	}
-	
+
 	.description{
 		width: 70%;
 		margin: 0 auto;
 	}
-	
+
 	.title, .price, .ship-siz {
 		width: 70%;
-		text-align: center;	
-		margin: 0 auto; 
+		text-align: center;
+		margin: 0 auto;
 	}
-	
+
 	form {
 		width: 50%;
 		margin: 0 auto;
@@ -252,7 +250,7 @@
 		margin: auto;
 
 	}
-	
+
 }
 .tabs, .tab-content {
 	display: block;
@@ -275,18 +273,18 @@
 #footer{
 		> div > div{
 			width: 45%;
-			margin-right:5%;			
+			margin-right:5%;
 		}
 		> div > div:first-child{
 			display: none;
 		}
 	}
-}	
-	
+}
+
 @media (max-width: 700px) {
-	/* SIZING CHART */	
-	.sizing {	
-		img { 
+	/* SIZING CHART */
+	.sizing {
+		img {
 			margin: 0 auto 2em auto;
 			float: none;
 		}

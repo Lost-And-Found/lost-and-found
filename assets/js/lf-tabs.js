@@ -1,9 +1,9 @@
 // this the tabs function//
-jQuery(document).ready(function() {
-    jQuery('.tabs .tab-links a').on('click', function(e)  {
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
         var currentAttrValue = jQuery(this).attr('href');
-        console.log(currentAttrValue);
- 
+        // console.log(currentAttrValue);
+
         // Show/Hide Tabs
         // jQuery('.tab ' + currentAttrValue).show().siblings().hide();
         if (currentAttrValue === "#sizing") {
@@ -32,10 +32,7 @@ jQuery(document).ready(function() {
         	$("#sizing").removeClass("active");
         }
         // Change/remove current tab to active
-        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-
-
- 
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
         e.preventDefault();
     });
 });

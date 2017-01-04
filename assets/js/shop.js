@@ -16,7 +16,7 @@ var app = {
 			$("#brandslink").click(app.mainNavigation.toggleBrandslink);
 			$("#categorylink").click(app.mainNavigation.toggleCategorylink);
 			$("#giftlink").click(app.mainNavigation.toggleGiftlink);
-			
+
 		},
 		toggleopen: function(event) {
 			$(this.parentNode).toggleClass("open");
@@ -83,7 +83,7 @@ var app = {
 				"//cdn.shopify.com/s/files/1/0113/7222/t/16/assets/mapicon.png?12949493130272394472", //url
 				new google.maps.Size(50, 86), //size
 				new google.maps.Point(0, 0), //origin
-				new google.maps.Point(25, 86) //anchor 
+				new google.maps.Point(25, 86) //anchor
 			);
 
 

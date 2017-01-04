@@ -12,7 +12,7 @@ option, select {
 	-moz-appearance: none !important;
 }
 
-#nav { 
+#nav {
 	padding-top:0 !important;
 	padding-bottom:0 !important;
 	height:100%;
@@ -32,9 +32,11 @@ option, select {
 			li > a {
 				padding-bottom:10px;
 				border-bottom:1.5px solid transparent;
+				font-family: Montserrat-Regular, Montserrat !important;
 				&:hover  {
 					border-bottom:1.5px solid white;
 					color:#fff;
+					font-family: Montserrat-Regular, Montserrat !important;
 				}
 			}
 			.top_link {
@@ -58,8 +60,7 @@ option, select {
 					font-size:12px;
 				}
 				li {
-					font-family: Montserrat-Regular;
-					font-family: Montserrat;
+					font-family: Montserrat-Regular, Montserrat !important;
 				}
 			}
 		}
@@ -108,8 +109,7 @@ option, select {
 			transition: all 0.5s ease-in-out;
 			box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 			#collections, #brandlist, #giftlist {
-				font-family: Montserrat-Regular;
-				font-family: Montserrat !important;
+				font-family: Montserrat-Regular, Montserrat !important;
 				background-color:transparent;
 				box-shadow: none;
 				@include flexbox();
@@ -127,8 +127,7 @@ option, select {
 				height:12vh;
 			}
 			li {
-				font-family: Montserrat-Regular;
-				font-family: Montserrat;
+				font-family: Montserrat-Regular, Montserrat !important;
 				// why is there a blank category?
 				&:first-child {
 					display:none;
@@ -172,19 +171,20 @@ option, select {
 				font-family: Montserrat !important;
 			}
 			p {
-				font-family: Montserrat-Regular;
+				font-family: Montserrat-Regular, Montserrat !important;;
 			}
 
 			a {
 				text-transform:capitalize;
 				display:inline;
 				color:#404040;
-				font-family:Montserrat-Regular;
+				font-family: Montserrat-Regular, Montserrat !important;
 				font-size:13px;
 				line-height:21px;
 				padding-right:20px;
 				&:hover {
 					color:#ECECEC;
+					font-family: Montserrat-Regular, Montserrat !important;
 				}
 			}
 		}
@@ -203,6 +203,7 @@ option, select {
 					width:20%;
 					a {
 						font-size:12px;
+						font-family: Montserrat-Regular, Montserrat !important;
 					}
 				}
 
@@ -247,8 +248,7 @@ nav {
 //catogory dropdown stuff
 #navcollectionlist {
 	display:none;
-	font-family: Montserrat-Regular;
-	font-family: Montserrat;
+	font-family: Montserrat-Regular, Montserrat !important;
 }
 body > li {
 	display:none;
@@ -587,7 +587,7 @@ body > li {
 					&:hover a {
 						border-bottom:1px solid transparent;
 						color:#969696;
-					}
+					} 
 					a {
 						width:100%;
 						padding: 10px 0;

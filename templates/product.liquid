@@ -28,7 +28,7 @@
 		{% elsif product.type == "Outerwear" or product.type == "Jackets" %}
 			<img src="{{ 'jacket-icon.jpg' | asset_url }}">
 		{% endif %}
- 
+
 		{{ pages[bohdansizing].content }}
 
 		<div class="mini"><a href="#">X</a></div>
@@ -157,7 +157,7 @@
 					<li class="active links"><a href="#details">Details</a></li>
 				{% endif %}
 				<li class="links"><a href="#sizing">Sizing</a></li>
-				<li class="links"><a href="#shipping">Shipping</a></li>
+				<li class="links"><a href="#shipping">Returns</a></li>
 			</ul>
 		</div>
 		<!-- end of phyiscal tab titles.  -->
@@ -184,8 +184,6 @@
 		        </div>
 
 		        <div id="shipping" class="tab tab-sizing">
-		            <p>Shipping + Returns</p>
-
 		            {% if product.price > 60000%}
 						<p class="freeshipping">
 							{{ pages["shipping-policy-north-america"].content }}
@@ -207,9 +205,7 @@
 {% assign limit = 3 %}
 {% assign skip_product = product %}
 {% assign products = collection.products %}
-{% if products %}
+
 
 <h4 class="">Related Items</h4>
 {% include 'product-loop' %}
-
-{% endif %}

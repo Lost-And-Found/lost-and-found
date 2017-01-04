@@ -57,12 +57,7 @@
 	<link rel="canonical" href="{{ canonical_url }}" />
 	<meta name="viewport" content="width=device-width" />
 	{{ content_for_header }}
-
-	{% if template contains 'product' %}
-		{{ 'js/tabs.js'| asset_url | script_tag }}
-	{% endif %}
 	{{ 'style.min.css' | asset_url | stylesheet_tag }}
-
 	{{ 'modernizer.min.js'| asset_url | script_tag }}
 </head>
 <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" style="padding-top:75px;" >
@@ -109,12 +104,11 @@
 
 </div>
 	{{ 'main.min.js'  | asset_url | script_tag }}
-
-
 	<script type="text/javascript">
 		$( document ).ready(app.init);
 		$( window ).load(app.blogFullHeight);
 	</script>
+
 	{% include 'currencies' %}
 </body>
 </html>
