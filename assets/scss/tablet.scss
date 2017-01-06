@@ -126,7 +126,7 @@
 		}
 	}
 	body > #navbrandlist,body > #navcollectionlist,body > #giftguidelist{
-		display: block; 
+		display: block;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -272,12 +272,24 @@
 /*  FOOTER  */
 #footer{
 		> div > div{
-			width: 45%;
+			width: 35%;
 			margin-right:5%;
+
+			.social_link {
+				line-height: 30px;
+			}
+			.block {
+				padding-left: 10px;
+			}
+
 		}
-		> div > div:first-child{
-			display: none;
-		}
+		 > div > div:first-child{
+		 	width: 20%;
+		 }
+		 > div > div:last-child{
+		 	width: 25%;
+			margin-right: 0%;
+		 }
 	}
 }
 

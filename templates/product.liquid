@@ -170,13 +170,14 @@
 			 		{% endif %}
 
 		        <div id="sizing" class="tab tab-sizing">
-		        	<p>Sizing</p>
+		        	<p></p>
 
 							{% if product.description contains "<table" %}
 						    {% assign sizechart = product.description | split: '' %}
 								{{ sizechart }}
 
 							{% else %}
+							<p></p>
 								{{ pages["gen-sizing"].content }}
 
 							{% endif %}
