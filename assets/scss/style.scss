@@ -72,10 +72,10 @@ h4{
 	height: 100%;
 }
 .linebottom{
-	border-bottom: solid 1px $border-color;
+	border-bottom: none;
 }
 .linetop{
-	border-top: solid 1px $border-color;
+	border-top: none;
 }
 .strike{
 	text-decoration: line-through;
@@ -387,8 +387,8 @@ h4{
 		position:relative;
 		z-index:99;
 		@extend .linetop;
-		background-color: #fff;
-		padding: 60px;
+		background-color: #f7f7f7;
+		padding: 80px;
 		> div{
 			max-width: $max-width;
 			width: $stick-width;
@@ -472,8 +472,7 @@ h4{
 
 
 	.products{
-		max-width: $max-width;
-		width: $stick-width;
+		width: $full-width;
 		margin:auto;
 		text-align: center;
 
@@ -498,7 +497,7 @@ h4{
 					z-index: 99;
 					height: 300px;
 					width: 100%;
-					border: solid 1px $border-color;
+					border: none;
 					position: relative;
 					-webkit-background-size: contain;
 					-moz-background-size: contain;
@@ -531,7 +530,7 @@ h4{
 							overflow: hidden;
 							width: 100%;
 						ul{
-							background: #ececec;
+							background: #FFFFFF;
 							position: relative;
 							top: -200px;
 							width: 100%;
@@ -550,7 +549,7 @@ h4{
 					}
 				}
 				&:hover{
-					background-color: #fc0;
+					background-color: none;
 					.slideupsize{
 						ul {
 							top: 0;
@@ -594,10 +593,12 @@ h4{
 		}
 
 		.exclusive {
-			background: darkgrey;
-			color: white;
+			background: none;
+			color: rgb(0, 0, 255);
 			width: 100%;
-			border: 1px solid darkgrey;
+			font-weight: 900;
+			font-style: italic;
+			border: none;
 		}
 	}
 
@@ -622,9 +623,8 @@ h4{
 	}
 
 	#recent-articles{
-		max-width: $max-width;
-		width: $stick-width;
-		margin:auto;
+		width: $full-width;
+		margin: 0px auto 60px auto;
 
 		li{
 			list-style: none;
@@ -660,7 +660,7 @@ h4{
 						height: 200px;
 						background-repeat: no-repeat;
 						background-size: cover;
-						border: solid 1px $border-color;
+						border: none;
 						img{
 							display: none;
 						}
@@ -687,7 +687,7 @@ h4{
 			}
 
 			img{
-				border: solid 1px $border-color;
+				border: none;
 				width:100%;
 			}
 		}
@@ -697,8 +697,9 @@ h4{
 	.feature_text{
 		max-width: $width-small;
 		width: $stick-width;
+		font-family: $sans-serif !important;
 		margin: auto;
-		padding-bottom: 100px;
+		padding-bottom: 60px;
 	}
 
 
@@ -744,7 +745,7 @@ h4{
 					-webkit-transition: all 0.2s ease-out;
 				 }
 				img{
-					border: solid 1px $border-color;
+					border: none;
 				}
 			}
 			.mobileimage{
@@ -765,7 +766,7 @@ h4{
 				display: inline-block;
 				vertical-align: top;
 				> div{
-					border: solid 1px $border-color;
+					border: none;
 					line-height: 0;
 				}
 			}
@@ -895,7 +896,7 @@ h4{
 				font-size: 1em;
 				color: inherit;
 				font-family: inherit;
-				background-color: #fff;
+				background-color: #f7f7f7;
 				text-transform: uppercase;
 				padding: .75em 1em;
 				transition: all .2s linear;
@@ -917,7 +918,7 @@ h4{
 				margin: 0 0 0.8em 0;
 				display: inline-block;
 				position: relative;
-				background-color: #fff;
+				background-color: #f7f7f7;
 			}
 
 			#selector:after{
@@ -960,7 +961,7 @@ h4{
 					display: inline-block;
 					width: 80%;
 					padding: 0.5em 10%;
-					background-color: #fff;
+					background-color: #f7f7f7;
 					color: inherit;
 					text-decoration: none;
 					transition: all .2s linear;
@@ -1043,7 +1044,7 @@ h4{
 				display: block;
 				z-index: 99;
 				margin: 10px 10px;
-				border: 1px solid $border-color;
+				border: none;
 				padding: 8px 0px 5px 1px;
 
 				a:hover{
@@ -1315,7 +1316,7 @@ h4{
 				padding: 6px;
 				font-size: 10px;
 				margin-bottom: 12px;
-				background-color: #fff;
+				background-color: #f7f7f7;
 			}
 
 			textarea{
@@ -1344,8 +1345,10 @@ h4{
 
 /* Articles */
 	#articlecontent{
+		height: auto;
+		min-height: 80vh;
 		width: 100%;
-		margin:auto;
+		margin:25px 0 -10px 0;
 		.article-images {
 			display: inline-block;
 			width: 50%;
@@ -1365,6 +1368,7 @@ h4{
 		.article{
 			position: fixed;
 			height: 100%;
+			min-height: 100vh;
 			overflow: scroll;
 			width: 39%;
 			padding:0 5%;
@@ -1500,7 +1504,7 @@ h4{
 				}
 			}
 			img{
-				border: 1px solid $border-color;
+				border: none;
 				max-width: 80%;
 			}
 			p{
@@ -1578,7 +1582,7 @@ h4{
  						}
  					}
  				p {
- 					
+
  				}
  				:not(table){
  				}
