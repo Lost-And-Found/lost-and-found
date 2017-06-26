@@ -7,8 +7,8 @@
 
 <h4>Blog</h4>
 
-
 <div id="bloglist">
+ {% paginate blog.articles by 10 %}
 	<ul>
 		{% for article in blog.articles %}
 			<li>
@@ -39,6 +39,13 @@
 
 			</div>
 			</li>
+			
 		{% endfor %}
 	</ul>
+	    {% if paginate.pages > 1 %}
+	        <div class="pagination">
+	            <p>{{ paginate | default_pagination }}</p>
+	        </div>
+	    {% endif %}
+	{% endpaginate %}
 </div>
