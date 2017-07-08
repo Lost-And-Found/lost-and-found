@@ -693,26 +693,41 @@ h4{
 		}
 		.sale{
 			position: absolute;
-			top: 0px;
-			width: 25%;
-			padding: 3% 0 3% 0;
-			text-align: center;
-			font-size: 15px;
-			text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-			color: red;
-			z-index: 99;
+	    top: 0;
+	    width: 56px;
+	    padding: 16px 0;
+	    text-align: center;
+	    font-size: 14px;
+	    color: #FFF;
+	    font-weight: bold;
+	    background-color: red;
+	    border-radius: 65%;
+	    z-index: 99;
+	    opacity: 0.7;
 		}
 		a:hover{
 			color: #000;
 		}
 
 		.exclusive {
-			background: none;
-			color: rgb(0, 0, 255);
-			width: 100%;
-			font-weight: 900;
-			font-style: italic;
-			border: none;
+			position: absolute;
+	    top: 0;
+	    width: 56px;
+	    padding: 16px 0;
+	    text-align: center;
+	    font-size: 14px;
+	    color: #FFF;
+	    font-weight: bold;
+	    background-color: #333333;
+	    border-radius: 65%;
+	    z-index: 99;
+	    opacity: 0.7;
+			// background: none;
+			// color: rgb(0, 0, 255);
+			// width: 100%;
+			// font-weight: 900;
+			// font-style: italic;
+			// border: none;
 		}
 	}
 
@@ -840,7 +855,7 @@ h4{
 
 
 			.leftcolumn {
-				max-width: 75px;
+				max-width: 100px;
 			}
 
 			.leftcolumn,.mobileimage{

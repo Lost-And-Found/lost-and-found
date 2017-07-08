@@ -9,14 +9,14 @@
 			<div class="backgroundimageone" style="background-image:url({{ product.images[0] | product_img_url: 'large' }})">
 				{% if product.images[1]%}
 					<div  class="bk2" style="background-image:url({{ product.images[1] | product_img_url: 'large' }})"></div>
-				{% endif %}			
+				{% endif %}
 			</div>
 			{% if product.compare_at_price_max > product.price %}
 				<div class="sale">Sale</div>
 			{% endif %}
-			
+
 			{% if exclusive == true %}
-				<div class="exclusive">Lost &amp; Found Exclusive</div>
+				<div class="exclusive">L&amp;F</div>
 			{% endif %}
 			<div class="slideupsize">
 				<div>
@@ -35,7 +35,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>	
+		</div>
 		<a href="{{ product.url | within: collection }}">
 
 			<span class="dashafter"></span>
@@ -53,7 +53,7 @@
 				</span>
 			{% else %}
 				<span {% if product.compare_at_price_max > product.price %}class="lightgrey" {% endif %}>{{ product.price_min | money }}</span> - Sold Out
-			{% endif %}	
+			{% endif %}
 		</a>
 	</a>
 
