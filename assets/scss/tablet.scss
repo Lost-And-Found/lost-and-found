@@ -271,25 +271,56 @@
 
 /*  FOOTER  */
 #footer{
-		> div > div{
-			width: 35%;
-			margin-right:5%;
 
-			.social_link {
-				line-height: 30px;
+	.footer_subscribe_container {
+		min-height: 160px !important;
+		div{
+			padding: 40px 30px !important;
+			input[type=email]{
+				width: 70% !important;
 			}
-			.block {
-				padding-left: 10px;
-			}
-
 		}
-		 > div > div:first-child{
-		 	width: 20%;
-		 }
-		 > div > div:last-child{
-		 	width: 25%;
-			margin-right: 0%;
-		 }
+	}
+
+	.footer_info_container {
+		width: 65%;
+		vertical-align: middle!important;
+		div {
+			padding: 20px 30px !important;
+			vertical-align: middle!important;
+
+			div:nth-of-type(1),div:nth-of-type(1){
+				margin-bottom: 20px;
+			}
+			div {
+				 width: 45% !important;
+				 height: auto;
+				 font-size: 10px !important;
+				 vertical-align: middle!important;
+			}
+		}
+	}
+
+
+		// > div > div{
+		// 	width: 35%;
+		// 	margin-right:5%;
+		//
+		// 	.social_link {
+		// 		line-height: 30px;
+		// 	}
+		// 	.block {
+		// 		padding-left: 10px;
+		// 	}
+		//
+		// }
+		//  > div > div:first-child{
+		//  	width: 20%;
+		//  }
+		//  > div > div:last-child{
+		//  	width: 25%;
+		// 	margin-right: 0%;
+		//  }
 	}
 }
 

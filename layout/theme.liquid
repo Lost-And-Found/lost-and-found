@@ -69,7 +69,41 @@
 	{{ content_for_layout }}
 
 	<div id="footer">
-		<div>
+		<div class="footer_subscribe_container">
+			<div>
+				<p>Join our Newsletter</p>
+				<form accept-charset="UTF-8" action="/contact" class="footer_contact_form" method="post"><input name="form_type" type="hidden" value="customer"><input name="utf8" type="hidden" value="✓">
+					<input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter">
+					<input type="hidden" id="newsletter-first-name" name="contact[first_name]" value="Subscriber">
+					<input type="hidden" id="newsletter-last-name" name="contact[last_name]" value="Newsletter">
+					<input type="email" id="contact_email" name="contact[email]" required="" pattern="[^ @]*@[^ @]*" placeholder="Email"><input type="submit" class="submit" value="»">
+				</form>
+			</div>
+		</div>
+		<div class="footer_info_container">
+			<div>
+				<div id="footer_info_address">
+					44 Ossington ave.<br>
+					Toronto ON, M6J 2Y7
+				</div>
+				<div id="footer_info_contact">
+					+ 647.348.2810<br>
+					<a href="mailto:info@shoplostfound.com">Info@shoplostfound.com</a>
+				</div>
+				<div id="footer_info_hours">
+					MON-SAT : 10AM-7PM<br>
+					SUNDAY: 11AM-6PM
+				</div>
+				<div id="footer_info_social">
+					<a href="https://twitter.com/shoplostfound" title="Lost &amp; Found on Twitter" class="footer_info_social_icon" rel="me" target="_blank"><img src="{{ 'sm-twitter.png' | asset_url }}"></a>
+					<a href="http://facebook.com/shoplostfound" title="Lost &amp; Found on Facebook" class="footer_info_social_icon" rel="me" target="_blank"><img src="{{ 'sm-fb.png' | asset_url }}"></a>
+					<a href="http://shoplostfound.tumblr.com/" title="Lost &amp; Found on Tumblr" class="footer_info_social_icon" rel="me" target="_blank"><img src="{{ 'sm-tum.png' | asset_url }}"></a>
+					<a href="http://instagram.com/shoplostfound" title="Lost &amp; Found on Instagram" class="footer_info_social_icon" rel="me" target="_blank"><img src="{{ 'sm-insta.png' | asset_url }}"></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div>
 			<div>
 				<span class="dashafter"><a href="http://shoplostfound.com/pages/about-us">COMPANY</a></span>
 				<a href="http://shoplostfound.com/pages/about-us"> About</a><br>
@@ -98,7 +132,7 @@
 					<tr><td class="smallbuffer">Sunday</td>		<td class="smallbuffer">:</td>	<td class="smallbuffer">11am - 6pm</td></tr>
 				</tbody></table>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 </div>
