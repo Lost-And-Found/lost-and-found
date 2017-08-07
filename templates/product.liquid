@@ -93,7 +93,7 @@
 		{% if product.available == true %}
 
 
-		<form action="/cart/add" class="spaceafter" method="post" enctype="multipart/form-data" id="sizeselector">
+		<form action="/cart/add" class="" method="post" enctype="multipart/form-data" id="sizeselector">
 			<label>Size</label>
 
 			{% if pages[bohdansizing].content != "" %}
@@ -117,18 +117,10 @@
 					{% for variant in product.variants %}
 						{% if variant.available == true %}
 							<option value="{{variant.id}}"> {{ variant.title }}</option>
-							{% comment %} {% else %}
-							<option value="{{variant.id}}"> {{ variant.title }}</option> {% endcomment %}
 						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
-
-	{% comment %} 		{% for variant in product.selected_or_first_available_variant %}
-				{% if  variant.inventory_quantity == 0 %}
-					<p>show this text if unavail</p>
-				{% endif %}
-			{% endfor %} {% endcomment %}
 
 			{% if nocart == true %}
 				<div class="nocart">
@@ -137,19 +129,19 @@
 			{% else %}
 				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
-{% comment %}
-			{% if sizesoldout == true %}
-				<div class="sm-txt">NOTIFY ME WHEN ITEM IS RESTOCKED</div>
-				<input type="text" name="email" id="email" value="Email Address" class="button email">
-				<input type="submit" name="add" id="add" value="Submit" class="button">
-			{% endif %}
-{% endcomment %}
 
+			{% for variant in product.variants %}
+				{% if variant.available == false %}
+					<p id="when-available">Is the size you're looking for sold out? No worries, click the link below and we will notify you when we restock.</p>
+					{% break %}
+				{% endif %}
+			{% endfor %}
 
 		</form>
 		{% endif %}
 
-		<div class="tabs">
+
+		<div class="tabs spacebefore">
 		<!-- our tab div, which has everything inside it starts here -->
 		<!-- <ul class="tab-links"> -->
 			<ul class="tab-links">
