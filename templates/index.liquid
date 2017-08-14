@@ -9,7 +9,7 @@
 <h4>Bulletin</h4>
 
 	<ul id="recent-articles">
-		{% for article in blogs['blog'].articles limit:4 %}<li>
+		{% for article in blogs['bulletin'].articles limit:4 %}<li>
 			<div id="atrilcetitle">
 				<div>
 					<a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
