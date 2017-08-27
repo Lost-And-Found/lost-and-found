@@ -375,8 +375,53 @@ h4{
 			display: inline-block;
 			width: 33.33%;
 		}
+		> div:first-child, div:last-child {
+			> a {
+				border: 1px solid #d8d8d8;
+				border-radius: 2px;
+				padding: 14px 20px;
+				transition: all .3s ease-out;
+				-o-transition: all .3s ease-out;
+				-moz-transition: all .3s ease-out;
+				-webkit-transition: all .3s ease-out;
+			}
+			> a:hover {
+				border-color: blue;
+			}
+
+		}
 		> div:nth-child(2){
 			text-align: center;
+			> .page {
+					padding-right: 4px;
+					color: #d8d8d8;
+
+					> a {
+						border-bottom: 1px solid #fff;
+						display: inline-block;
+						height: 23px;
+						width: 23px;
+						color: #000;
+						text-align: center;
+						transition: all .3s ease-out;
+						-o-transition: all .3s ease-out;
+						-moz-transition: all .3s ease-out;
+						-webkit-transition: all .3s ease-out;
+					}
+					> a:hover {
+						border-bottom: 1px solid blue;
+					}
+					> .underline {
+						border-bottom: 1px solid #d8d8d8;
+						display: inline-block;
+						height: 23px;
+						width: 23px;
+						color: #d8d8d8;
+						text-align: center;
+						text-decoration: none !important;
+					}
+			}
+
 		}
 		> div:last-child{
 			text-align: right;
@@ -388,6 +433,7 @@ h4{
 		z-index:99;
 		@extend .linetop;
 		background-color: #f7f7f7;
+		margin-top: 60px;
 		padding: 0;
 		width: 100%;
 		vertical-align: top;
