@@ -129,14 +129,14 @@
 			{% else %}
 				<input type="submit" name="add" id="add" value="Add to Cart" class="button">
 			{% endif %}
-
+			{% comment %}
 			{% for variant in product.variants %}
 				{% if variant.available == false %}
 					<p id="when-available">Is the size you're looking for sold out? No worries, click the link below and we will notify you when we restock.</p>
 					{% break %}
 				{% endif %}
 			{% endfor %}
-
+			{% endcomment %}
 		</form>
 		{% endif %}
 

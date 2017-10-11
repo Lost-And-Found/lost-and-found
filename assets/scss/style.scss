@@ -481,10 +481,10 @@ h4{
 						-moz-border-radius: 0px 2px 2px 0px;
 						-webkit-border-radius: 0px 2px 2px 0px;
 						border-radius: 0px 2px 2px 0px;
-						transition: color .3s ease-out;
-						-o-transition: color .3s ease-out;
-						-moz-transition: color .3s ease-out;
-						-webkit-transition: color .3s ease-out;
+						transition: all .3s ease-out;
+						-o-transition: all .3s ease-out;
+						-moz-transition: all .3s ease-out;
+						-webkit-transition: all .3s ease-out;
 					}
 					input[type=submit]:hover{
 						background-color: #FFF;
@@ -509,10 +509,10 @@ h4{
 			}
 
 			div {
-				padding: 35px 0px 35px 30px;
+				padding: 20px 0px 0px 30px;
 				display: inline-block;
 				vertical-align: middle;
-				min-height: 50px;
+				min-height: 100px;
 
 					div:nth-of-type(1),div:nth-of-type(2),div:nth-of-type(3) {
 						padding: 0px !important;
@@ -521,7 +521,7 @@ h4{
 						margin-right:1%;
 						display: inline-block;
 						position: relative;
-						vertical-align: middle;
+						vertical-align: top;
 					}
 					div:nth-of-type(4){
 						padding: 0px !important;
@@ -530,6 +530,7 @@ h4{
 						display: inline-block;
 						position: relative;
 						vertical-align: middle;
+						margin-top: 10px;
 
 							.footer_info_social_icon{
 								padding: 0px;
@@ -537,16 +538,16 @@ h4{
 								margin-right: 3%;
 								display: inline-block;
 								vertical-align: middle;
-								transition: color .3s ease-out;
-								-o-transition: opacity .3s ease-out;
-								-moz-transition: opacity .3s ease-out;
-								-webkit-transition: opacity .3s ease-out;
+								transition: all .3s ease-out;
+								-o-transition: all .3s ease-out;
+								-moz-transition: all .3s ease-out;
+								-webkit-transition: all .3s ease-out;
 									svg {
 										max-width: 100%;
-										transition: color .3s ease-out;
-										-o-transition: opacity .3s ease-out;
-										-moz-transition: opacity .3s ease-out;
-										-webkit-transition: opacity .3s ease-out;
+										transition: all .3s ease-out;
+										-o-transition: all .3s ease-out;
+										-moz-transition: all .3s ease-out;
+										-webkit-transition: all .3s ease-out;
 									}
 									:hover {
 										opacity: 0.5;
